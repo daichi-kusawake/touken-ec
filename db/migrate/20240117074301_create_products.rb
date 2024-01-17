@@ -12,8 +12,6 @@ class CreateProducts < ActiveRecord::Migration[7.1]
       t.references :sign, null: false, foreign_key: true
       t.references :japanese_sword, null: false, foreign_key: true
       t.integer :sales_status
-      t.timestamp :registration_at
-      t.timestamp :updated_at
 
       t.timestamps
     end
