@@ -1,9 +1,3 @@
-▼ER図
-![touken_ec_ER-2024-01-17-040643](https://github.com/daichi-kusawake/touken-ec/assets/77773862/2e6b3a0a-89e8-4e83-a171-8c0553218dd7)
-![ec drawio20230117](https://github.com/daichi-kusawake/touken-ec/assets/77773862/3c2e1eef-d29a-4731-9c45-f21be9ecf60f)
-
-
-
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -29,4 +23,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# ER図
+▼Memaid Chatを用いて設計
+![touken_ec_ER-2024-01-17-083216](https://github.com/daichi-kusawake/touken-ec/assets/77773862/0eee6ef4-bde7-4802-9db1-507b3cddc303)
+
+▼draw.ioを用いて設計
+![ec drawio20230117](https://github.com/daichi-kusawake/touken-ec/assets/77773862/3c2e1eef-d29a-4731-9c45-f21be9ecf60f)
+
+
 
