@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: one
+  order: one
+  tax_included_price: MyString
+  order_status: 1
+  registration_at: 2024-01-17 17:04:07
+  updated_at: 2024-01-17 17:04:07
+
+two:
+  product: two
+  order: two
+  tax_included_price: MyString
+  order_status: 1
+  registration_at: 2024-01-17 17:04:07
+  updated_at: 2024-01-17 17:04:07

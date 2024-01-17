@@ -7,6 +7,9 @@ class Product < ApplicationRecord
   belongs_to :sign
   belongs_to :japanese_sword
 
-  #enum設定 1の場合：販売中,2の場合売り切れ
-  enum sales_status:{on_sale:1,sold_out:0}
+  #enum設定 1:刀 2:刀装具 3:甲冑
+  enum article_id:{japanese_sword:1,tosogu:2,kattyu:3}
+
+  #enum設定 0の場合：売り切れ,1の場合販売中
+  enum sales_status:{sold_out:0,on_sale:1}
 end
