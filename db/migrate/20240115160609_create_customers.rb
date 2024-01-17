@@ -10,6 +10,9 @@ class CreateCustomers < ActiveRecord::Migration[7.1]
       t.string :email_address
       t.timestamps :registration_at
       t.timestamps :updated_at
+
+      t.timestamps
+
     end
   end
 end
