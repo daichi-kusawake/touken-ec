@@ -7,12 +7,10 @@ class CreateCustomers < ActiveRecord::Migration[7.1]
       t.string :last_name_furigana
       t.string :email_address
       t.string :password
-      t.string :email_address
-      t.timestamps :registration_at
-      t.timestamps :updated_at
+      t.timestamp :registration_at
+      #t.timestamp :updated_at
 
       t.timestamps
-
     end
   end
 end
