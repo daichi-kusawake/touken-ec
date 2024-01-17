@@ -12,8 +12,7 @@ one:
   sign: one
   japanese_sword: one
   sales_status: 1
-  registration_at: 2024-01-17 16:43:01
-  updated_at: 2024-01-17 16:43:01
+
 
 two:
   product_name: MyString
@@ -27,5 +26,3 @@ two:
   sign: two
   japanese_sword: two
   sales_status: 1
-  registration_at: 2024-01-17 16:43:01
-  updated_at: 2024-01-17 16:43:01

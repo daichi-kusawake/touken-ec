@@ -5,13 +5,11 @@ one:
   addressee: MyString
   delivery_postal_code: MyString
   delivery_address: MyString
-  registration_at: 2024-01-17 16:12:25
-  updated_at: 2024-01-17 16:12:25
+
 
 two:
   custumer: two
   addressee: MyString
   delivery_postal_code: MyString
   delivery_address: MyString
-  registration_at: 2024-01-17 16:12:25
-  updated_at: 2024-01-17 16:12:25
+

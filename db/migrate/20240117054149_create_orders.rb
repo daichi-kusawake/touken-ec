@@ -9,8 +9,6 @@ class CreateOrders < ActiveRecord::Migration[7.1]
       t.integer :billing_amount
       t.integer :shipping_fee
       t.integer :order_status
-      t.timestamp :registration_at
-      t.timestamp :updated_at
 
       t.timestamps
     end
