@@ -1,5 +1,7 @@
+▼ER図
+![touken_ec_ER-2024-01-17-040643](https://github.com/daichi-kusawake/touken-ec/assets/77773862/2e6b3a0a-89e8-4e83-a171-8c0553218dd7)
+![ec drawio20230117](https://github.com/daichi-kusawake/touken-ec/assets/77773862/3c2e1eef-d29a-4731-9c45-f21be9ecf60f)
 
-![token_ec drawio](https://github.com/daichi-kusawake/touken-ec/assets/77773862/64649e5b-423f-4011-b492-251e370cedc1)
 
 
 # README
