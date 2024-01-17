@@ -1,0 +1,2 @@
+class KattyuCategory < ApplicationRecord
+end

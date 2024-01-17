@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  era: MyString
+  era_name: MyString
+  ad: 2024-01-17
+
+two:
+  era: MyString
+  era_name: MyString
+  ad: 2024-01-17

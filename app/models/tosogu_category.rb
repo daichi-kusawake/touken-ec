@@ -1,0 +1,2 @@
+class TosoguCategory < ApplicationRecord
+end

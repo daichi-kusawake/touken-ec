@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_name: MyString
+  tax_excluded_price: 1
+  description: MyString
+  article_category: one
+  article_id: 1
+  appraisal_document: one
+  country: one
+  era: one
+  sign: one
+  japanese_sword: one
+  sales_status: 1
+  registration_at: 2024-01-17 16:43:01
+  updated_at: 2024-01-17 16:43:01
+
+two:
+  product_name: MyString
+  tax_excluded_price: 1
+  description: MyString
+  article_category: two
+  article_id: 1
+  appraisal_document: two
+  country: two
+  era: two
+  sign: two
+  japanese_sword: two
+  sales_status: 1
+  registration_at: 2024-01-17 16:43:01
+  updated_at: 2024-01-17 16:43:01

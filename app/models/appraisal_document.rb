@@ -1,0 +1,2 @@
+class AppraisalDocument < ApplicationRecord
+end
