@@ -9,8 +9,6 @@ one:
   billing_amount: 1
   shipping_fee: 1
   order_status: 1
-  registration_at: 2024-01-17 14:41:49
-  updated_at: 2024-01-17 14:41:49
 
 two:
   customer: two
@@ -21,5 +19,4 @@ two:
   billing_amount: 1
   shipping_fee: 1
   order_status: 1
-  registration_at: 2024-01-17 14:41:49
-  updated_at: 2024-01-17 14:41:49
+
