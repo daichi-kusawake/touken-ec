@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get 'cusutomers/new'
+  get 'customers/index'
+  get 'customers/new'
+
+  get "customers" => "customers#index"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -9,8 +13,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index
  
-  #ユーザー登録用
-  root 'staticpages#home'
+  #ユーザー登録
+
   get 'help' =>'staic_pages#home'
   get 'about' =>'static_pages#help'
   get 'contact' => 'static_pages#contact'
