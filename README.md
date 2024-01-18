@@ -1,4 +1,4 @@
-![touken_ec_ER-2024-01-18-082702](https://github.com/daichi-kusawake/touken-ec/assets/77773862/f2bd6f63-5134-4b69-a002-aabd177dd4c9)# README
+# README
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
