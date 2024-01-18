@@ -1,0 +1,206 @@
+[33mcommit 536f8e2376ca581dbd1271f7b4b1b8bc6199b966[m[33m ([m[1;36mHEAD -> [m[1;32mdbmodified[m[33m, [m[1;31morigin/dbmodified[m[33m)[m
+Author: Daichi Kusawake <mrm.disney@gmail.com>
+Date:   Thu Jan 18 23:46:26 2024 +0900
+
+    会員情報ページ
+
+[33mcommit 9582a09544a0143e2b43eb09baa80018a1bfd529[m
+Author: Daichi Kusawake <mrm.disney@gmail.com>
+Date:   Thu Jan 18 22:57:17 2024 +0900
+
+    データベース修正
+
+[33mcommit 06e62557625c2a01ccc6ae021c96af9da15ca97a[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 6f89a0c d51d7fd
+Author: Daichi Kusawake <77773862+daichi-kusawake@users.noreply.github.com>
+Date:   Thu Jan 18 19:08:16 2024 +0900
+
+    Merge pull request #4 from daichi-kusawake/customers-layout
+    
+    帰宅前コミット
+
+[33mcommit d51d7fdb95ddda4b7656653960a9475268af635e[m[33m ([m[1;31morigin/customers-layout[m[33m)[m
+Author: daichi-kusawake <mrm.disney@gmail.com>
+Date:   Thu Jan 18 19:06:46 2024 +0900
+
+    帰宅前コミット
+
+[33mcommit 6f89a0cea341bea87d9565ba17d4ac135ed7a93d[m
+Author: Daichi Kusawake <77773862+daichi-kusawake@users.noreply.github.com>
+Date:   Thu Jan 18 17:28:52 2024 +0900
+
+    Update README.md
+
+[33mcommit 6e1a4b705c8160767e0740dc99f5a800c60eaa33[m
+Author: Daichi Kusawake <77773862+daichi-kusawake@users.noreply.github.com>
+Date:   Thu Jan 18 17:27:51 2024 +0900
+
+    Update README.md
+
+[33mcommit b24a9da51f13d77b418a7e922906e5706fd96764[m
+Merge: 71e8e11 7584661
+Author: Daichi Kusawake <77773862+daichi-kusawake@users.noreply.github.com>
+Date:   Thu Jan 18 16:51:23 2024 +0900
+
+    Merge pull request #3 from daichi-kusawake/customers-layout
+    
+    customersのページ確認
+
+[33mcommit 758466179df311806b88380661d2d1efca4cdf96[m
+Author: daichi-kusawake <mrm.disney@gmail.com>
+Date:   Thu Jan 18 16:40:51 2024 +0900
+
+    customersのページ確認
+
+[33mcommit 71e8e118dd53eee1e69bea3a73e0bafc77807cd2[m
+Merge: ba0ae0e 8615e8f
+Author: Daichi Kusawake <77773862+daichi-kusawake@users.noreply.github.com>
+Date:   Thu Jan 18 15:05:30 2024 +0900
+
+    Merge pull request #2 from daichi-kusawake/custumers-controller
+    
+    ユーザー登録画面
+
+[33mcommit 8615e8f60bdb04af22a3b0b46c6d2a8b55f4984f[m[33m ([m[1;31morigin/custumers-controller[m[33m)[m
+Author: daichi-kusawake <mrm.disney@gmail.com>
+Date:   Thu Jan 18 15:02:45 2024 +0900
+
+    html追加
+
+[33mcommit 57b5e09b32c1c63e4e2fc6c1b7bae662706171aa[m
+Author: daichi-kusawake <mrm.disney@gmail.com>
+Date:   Thu Jan 18 14:14:39 2024 +0900
+
+    routesni
+
+[33mcommit ba0ae0effab572e40c503c276d21054aada2462b[m
+Merge: 6c2d338 5b1499a
+Author: Daichi Kusawake <77773862+daichi-kusawake@users.noreply.github.com>
+Date:   Thu Jan 18 13:28:40 2024 +0900
+
+    Merge pull request #1 from daichi-kusawake/test
+    
+    update README
+
+[33mcommit 5b1499adf4b27397479f5975c78d38ca5d1c0625[m
+Author: daichi-kusawake <mrm.disney@gmail.com>
+Date:   Thu Jan 18 13:26:04 2024 +0900
+
+    update README
+
+[33mcommit 6c2d3385b5b88f0944f3ce4098a32d0079345012[m
+Author: daichi-kusawake <mrm.disney@gmail.com>
+Date:   Thu Jan 18 13:13:44 2024 +0900
+
+    README修正
+
+[33mcommit 5ef05b7c33dd4f6e3944a54cb2e3b181ef256e57[m
+Author: daichi-kusawake <mrm.disney@gmail.com>
+Date:   Thu Jan 18 12:41:17 2024 +0900
+
+    コントローラの削除
+
+[33mcommit 26d7db5fc95691ee79ce29767824ef406679980f[m
+Author: daichi-kusawake <mrm.disney@gmail.com>
+Date:   Thu Jan 18 12:01:04 2024 +0900
+
+    コントローラの設定
+
+[33mcommit 709ee2e77835ab1c42a0f7d9048025e70c012d2c[m
+Author: Daichi Kusawake <mrm.disney@gmail.com>
+Date:   Wed Jan 17 21:52:44 2024 +0900
+
+    seedでのテスト
+
+[33mcommit edaa30687e645c7dacc56f860b52eab1b1effe8c[m
+Author: Daichi Kusawake <mrm.disney@gmail.com>
+Date:   Wed Jan 17 20:49:51 2024 +0900
+
+    マイグレーションファイルの実行完了
+
+[33mcommit 5692eaecf22f2104a1f8dd77eb02d982ae5b837c[m
+Author: Daichi Kusawake <mrm.disney@gmail.com>
+Date:   Wed Jan 17 20:46:15 2024 +0900
+
+    updated_atの修正
+
+[33mcommit 007173ad8dc1e30fb3d5275ab405302e1bdf182b[m
+Author: Daichi Kusawake <mrm.disney@gmail.com>
+Date:   Wed Jan 17 20:33:19 2024 +0900
+
+    修正
+
+[33mcommit e8b65ce8a17fd6a95f094f86d953288104ccc0a6[m
+Author: Daichi Kusawake <77773862+daichi-kusawake@users.noreply.github.com>
+Date:   Wed Jan 17 17:49:03 2024 +0900
+
+    ER図の内容修正しました README.md
+
+[33mcommit 2316f0b319cca9c6c36dfc121eeaf8d14159fc77[m
+Author: Daichi Kusawake <mrm.disney@gmail.com>
+Date:   Wed Jan 17 17:37:50 2024 +0900
+
+    全てのモデル作成
+
+[33mcommit d4618ad7885db60c03b715785539e28bf07df609[m
+Author: Daichi Kusawake <mrm.disney@gmail.com>
+Date:   Wed Jan 17 16:53:45 2024 +0900
+
+    複数のモデル追加
+
+[33mcommit 14bdbf60f060fe4246e8c880053bcdd3840d7a52[m
+Author: Daichi Kusawake <mrm.disney@gmail.com>
+Date:   Wed Jan 17 16:13:22 2024 +0900
+
+    delivery_destinationモデルの追加
+
+[33mcommit 25db72a9876646f105441d0d798497ab79aff3dc[m
+Author: Daichi Kusawake <mrm.disney@gmail.com>
+Date:   Wed Jan 17 14:51:21 2024 +0900
+
+    orderモデルの作成
+
+[33mcommit df8db9d1af863cabf46669ac57279b0ef9c23fac[m
+Author: Daichi Kusawake <77773862+daichi-kusawake@users.noreply.github.com>
+Date:   Wed Jan 17 14:15:07 2024 +0900
+
+    Update README.md
+
+[33mcommit 93f9abea79023446afc55163d2be33fdf5aeea19[m
+Merge: b191530 f716b50
+Author: Daichi Kusawake <mrm.disney@gmail.com>
+Date:   Wed Jan 17 14:06:15 2024 +0900
+
+    Merge branch 'main' of https://github.com/daichi-kusawake/touken-ec
+
+[33mcommit b19153043b3ce9b82377bd8d62c7c7b666276e56[m
+Author: Daichi Kusawake <mrm.disney@gmail.com>
+Date:   Wed Jan 17 13:44:25 2024 +0900
+
+    A
+
+[33mcommit f716b500383ff4af675d09b5f65388bf6687d02e[m
+Author: Daichi Kusawake <77773862+daichi-kusawake@users.noreply.github.com>
+Date:   Tue Jan 16 00:57:01 2024 +0900
+
+    Update README.md
+    
+    er
+
+[33mcommit 32de7b16e54c1145678e06e1b6c5575784de20fc[m
+Author: Daichi Kusawake <77773862+daichi-kusawake@users.noreply.github.com>
+Date:   Tue Jan 16 00:56:29 2024 +0900
+
+    Update README.md
+
+[33mcommit d163642696c802adb2f39574eac5bdc7af4e06a3[m
+Author: Daichi Kusawake <77773862+daichi-kusawake@users.noreply.github.com>
+Date:   Tue Jan 16 00:55:48 2024 +0900
+
+    Update README.md
+
+[33mcommit 9d3923c5f4b9cb4b32ec20950afb500705fbe589[m
+Author: Daichi Kusawake <mrm.disney@gmail.com>
+Date:   Mon Jan 15 23:57:02 2024 +0900
+
+    first commit
