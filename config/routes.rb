@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'customers/index'
   get 'customers/new'
 
-  #get "customers" => "customers#index"
+  get "customers" => "customers#index"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -12,12 +12,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index
- 
+
   #ユーザー登録
 
   #get 'help' =>'staic_pages#home'
   #get 'about' =>'static_pages#help'
   #get 'contact' => 'static_pages#contact'
   #get 'signup' => 'customers#new'
-  
+
 end
