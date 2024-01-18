@@ -32,4 +32,9 @@ Things you may want to cover:
 ![ec drawio20230117](https://github.com/daichi-kusawake/touken-ec/assets/77773862/3c2e1eef-d29a-4731-9c45-f21be9ecf60f)
 
 
+# ブランチ変更
 
+* ブランチの新規作成とそのブランチへの切り替え
+git checkout -b modify-README
+
+* 
