@@ -1,7 +1,15 @@
 <h1>会員情報ページ</h1>
 
 <% @customers.each do |customer| %>
-    <%= customer.updated_at%>
+    <%= customer.family_name%>
+    <br>
+    <%= customer.last_name%>
+    <br>
+    <%= customer.family_name_furigana%>
+    <br>
+    <%= customer.last_name_furigana%>
+    <br>
+    <%= customer.email_address%>
+    <br>
+    <%= customer.password%>
 <%end%>
-
-<p>Find me in app/views/customers/index.html.erb</p>
