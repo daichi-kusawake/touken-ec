@@ -37,4 +37,8 @@ Things you may want to cover:
 * ブランチの新規作成とそのブランチへの切り替え
 git checkout -b modify-README
 
-* 
+* ブランチの作成
+git branch <branch名>
+
+* ブランチの切り替え
+git checkout <branch名>
