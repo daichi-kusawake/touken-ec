@@ -48,13 +48,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_083130) do
   end
 
   create_table "delivery_destinations", force: :cascade do |t|
-    t.integer "custumer_id", null: false
+    t.integer "customer_id", null: false
     t.string "addressee"
     t.string "delivery_postal_code"
     t.string "delivery_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["custumer_id"], name: "index_delivery_destinations_on_custumer_id"
+    t.index ["customer_id"], name: "index_delivery_destinations_on_customer_id"
   end
 
   create_table "eras", force: :cascade do |t|
@@ -95,17 +95,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_083130) do
   end
 
   create_table "kattyus", force: :cascade do |t|
-    t.integer "kattyu_category_id_id", null: false
+    t.integer "kattyu_category_id", null: false
     t.string "odoshiito"
     t.string "hachi"
     t.boolean "kabutodai"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["kattyu_category_id_id"], name: "index_kattyus_on_kattyu_category_id_id"
+    t.index ["kattyu_category_id"], name: "index_kattyus_on_kattyu_category_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "custumer_id", null: false
+    t.integer "customer_id", null: false
     t.string "addressee"
     t.string "delivery_postal_code"
     t.string "delivery_address"
@@ -115,7 +115,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_083130) do
     t.integer "order_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["custumer_id"], name: "index_orders_on_custumer_id"
+    t.index ["customer_id"], name: "index_orders_on_customer_id"
   end
 
   create_table "product_orders", force: :cascade do |t|
@@ -176,10 +176,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_083130) do
     t.index ["tosogu_category_id"], name: "index_tosogus_on_tosogu_category_id"
   end
 
-  add_foreign_key "delivery_destinations", "custumers"
+  add_foreign_key "delivery_destinations", "customers"
   add_foreign_key "japanese_swords", "japanese_sword_categories"
-  add_foreign_key "kattyus", "kattyu_category_ids"
-  add_foreign_key "orders", "custumers"
+  add_foreign_key "kattyus", "kattyu_categories"
+  add_foreign_key "orders", "customers"
   add_foreign_key "product_orders", "orders"
   add_foreign_key "product_orders", "products"
   add_foreign_key "products", "appraisal_documents"

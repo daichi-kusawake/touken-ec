@@ -1,2 +1,7 @@
-<h1>王様ランキング</h1>
+<h1>会員情報ページ</h1>
+
+<% @customers.each do |customer| %>
+    <%= customer.updated_at%>
+<%end%>
+
 <p>Find me in app/views/customers/index.html.erb</p>
