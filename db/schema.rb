@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_17_083130) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_17_082237) do
   create_table "administrators", force: :cascade do |t|
     t.string "email_address"
     t.string "password"
@@ -94,16 +94,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_083130) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "kattyus", force: :cascade do |t|
-    t.integer "kattyu_category_id", null: false
-    t.string "odoshiito"
-    t.string "hachi"
-    t.boolean "kabutodai"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["kattyu_category_id"], name: "index_kattyus_on_kattyu_category_id"
-  end
-
   create_table "orders", force: :cascade do |t|
     t.integer "customer_id", null: false
     t.string "addressee"
@@ -178,7 +168,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_083130) do
 
   add_foreign_key "delivery_destinations", "customers"
   add_foreign_key "japanese_swords", "japanese_sword_categories"
-  add_foreign_key "kattyus", "kattyu_categories"
   add_foreign_key "orders", "customers"
   add_foreign_key "product_orders", "orders"
   add_foreign_key "product_orders", "products"
