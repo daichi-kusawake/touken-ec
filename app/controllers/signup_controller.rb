@@ -6,8 +6,10 @@ class SignupController < ApplicationController
     end
 
     #登録されたユーザーをDBへ送る
-    def new
-        @customer = Customer.new
+    def create
+        #インスタンスの生成
+        @customer = Customer.new(customer_params)
+
         if @customer.save
             redirect_to root_path, notice:"アカウントを作成しました。"
         else
@@ -15,7 +17,7 @@ class SignupController < ApplicationController
         end
     end
 
-    def user_params
-        parms.require(:customer).permit(:user_name,:email_address,:password,:password_confirmation)
+    def customer_params
+        params.require(:customer).permit(:family_name,:last_name,:family_name_furigana,:last_name_furigana,:email_address,:password)
     end
 end
