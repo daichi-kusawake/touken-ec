@@ -1,45 +1,50 @@
-# form_withヘルパーを使って登録フォームを作る
+<!--フォームにて登録-->
 <%= form_with model: @customer, url: signup_path do |form| %>
-  <%= form.text_field :family_name %>
-  <%= form.text_field :last_name %>
-  <%= form.text_field :family_name_furigana %>
-  <%= form.text_field :last_name_furigana%>
-  <%= form.text_field :email_address %>
-  <%= form.password_field :password %>
-  <%= form.password_field :password_confirmation %>
-  <%= form.submit %>
-<% end %>
-
-# bootstrapでスタイリングする
-<%= form_with model: @customer, url: signup_path do |form| %>
-  <div class="form-group">
+  <div>
     <%= form.label :family_name %>
-    <%= form.text_field :family_name, placeholder: "Please enter your user name (minimum 3 characters)", class: "form-control mb-3" %>
+    <%= form.text_field :family_name, placeholder: "姓" %>
   </div>
-  <div class="form-group">
+
+  <div>
     <%= form.label :last_name %>
-    <%= form.text_field :last_name, placeholder: "Please enter your user name (minimum 3 characters)", class: "form-control mb-3" %>
+    <%= form.text_field :last_name, placeholder: "名"%>
   </div>
-  <div class="form-group">
+
+  <div>
     <%= form.label :family_name_furigana %>
-    <%= form.text_field :family_name_furigana, placeholder: "Please enter your user name (minimum 3 characters)", class: "form-control mb-3" %>
+    <%= form.text_field :family_name_furigana, placeholder: "姓（フリガナ）"%>
   </div>
-  <div class="form-group">
+
+  <div>
     <%= form.label :last_name_furigana %>
-    <%= form.text_field :last_name_furigana, placeholder: "Please enter your user name (minimum 3 characters)", class: "form-control mb-3" %>
+    <%= form.text_field :last_name_furigana, placeholder: "名（フリガナ）"%>
   </div>
-  <div class="form-group">
+  
+  <div>
     <%= form.label :email_address %>
-    <%= form.text_field :email_address, placeholder: "user@example.com", class: "form-control mb-3"  %>
+    <%= form.text_field :email_address, placeholder: "user@example.com"%>
   </div>
-  <div class="form-group">
+  
+  <div>
     <%= form.label :password %>
-    <%= form.password_field :password, placeholder: "Please enter your password", class: "form-control mb-3"  %>
+    <%= form.password_field :password, placeholder: "Please enter your password"%>
   </div>
-  <div class="form-group">
+  
+  <div>
     <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, placeholder: "Please enter your password again", class: "form-control mb-3"  %>
+    <%= form.password_field :password_confirmation, placeholder: "Please enter your password again"%>
   </div>
-  <%= form.submit class:'btn btn-primary' %>
+  
+  <%= form.submit%>
+
+  <% if form.object.errors.any? %>
+  <div class="alert alert-danger">
+      <% form.object.errors.full_messages.each do |message|  %>
+        <div>
+          <%= message %>
+        </div>
+      <% end  %>
+    </div>
+  <% end %>
 <% end %>
 

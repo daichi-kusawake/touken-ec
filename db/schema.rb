@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_17_082237) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_17_083130) do
   create_table "administrators", force: :cascade do |t|
     t.string "email_address"
     t.string "password"
@@ -37,11 +37,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_082237) do
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string "family_name"
-    t.string "last_name"
-    t.string "family_name_furigana"
-    t.string "last_name_furigana"
-    t.string "email_address"
+    t.string "family_name", null: false
+    t.string "last_name", null: false
+    t.string "family_name_furigana", null: false
+    t.string "last_name_furigana", null: false
+    t.string "email_address", null: false
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -92,6 +92,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_082237) do
     t.string "kattyu_category_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "kattyus", force: :cascade do |t|
+    t.integer "kattyu_category_id", null: false
+    t.string "odoshiito"
+    t.string "hachi"
+    t.boolean "kabutodai"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["kattyu_category_id"], name: "index_kattyus_on_kattyu_category_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -168,6 +178,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_082237) do
 
   add_foreign_key "delivery_destinations", "customers"
   add_foreign_key "japanese_swords", "japanese_sword_categories"
+  add_foreign_key "kattyus", "kattyu_categories"
   add_foreign_key "orders", "customers"
   add_foreign_key "product_orders", "orders"
   add_foreign_key "product_orders", "products"
