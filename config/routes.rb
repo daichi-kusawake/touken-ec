@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  #トップページ
+  root to:'top#index'
+  get 'top',to: 'top#index'
+
+  #サインページ
+  get 'signup',to:'signup#new'
+  post 'signup',to:'signup#create'
+
+
   get 'customers/index'
   get 'customers/new'
 
