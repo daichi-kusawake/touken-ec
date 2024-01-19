@@ -1,5 +1,5 @@
 class TopController < ApplicationController
-    def sign_on
+    def index
         @customers = Customer.new
     end
 end

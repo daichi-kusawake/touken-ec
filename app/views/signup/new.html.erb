@@ -17,6 +17,18 @@
     <%= form.text_field :family_name, placeholder: "Please enter your user name (minimum 3 characters)", class: "form-control mb-3" %>
   </div>
   <div class="form-group">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, placeholder: "Please enter your user name (minimum 3 characters)", class: "form-control mb-3" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :family_name_furigana %>
+    <%= form.text_field :family_name_furigana, placeholder: "Please enter your user name (minimum 3 characters)", class: "form-control mb-3" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :last_name_furigana %>
+    <%= form.text_field :last_name_furigana, placeholder: "Please enter your user name (minimum 3 characters)", class: "form-control mb-3" %>
+  </div>
+  <div class="form-group">
     <%= form.label :email_address %>
     <%= form.text_field :email_address, placeholder: "user@example.com", class: "form-control mb-3"  %>
   </div>
@@ -31,13 +43,3 @@
   <%= form.submit class:'btn btn-primary' %>
 <% end %>
 
-# エラーメッセージの出力
-  <% if form.object.errors.any? %>
-    <div class="alert alert-danger">
-      <% form.object.errors.full_messages.each do |message|  %>
-        <div>
-          <%= message %>
-        </div>
-      <% end  %>
-    </div>
-  <% end %>
