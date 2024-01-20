@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
-  get 'all_customers/index'
+
   #トップページ
-  root to:'all_customers#index'
-  get 'all_customers',to: 'all_customers#index'
+  root to:'customers#index'
+
 
   #サインページ
   get 'signup',to:'signup#new'
   post 'signup',to:'signup#create'
 
+  #個人情報
+  get 'customers/:id',to:'customers#show',as: 'customer'
 
-
-
-  get "all_customers" => "all_customers#index"
+  #顧客一覧
+  get 'customers',to:"customers#index"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
