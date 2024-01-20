@@ -7,4 +7,4 @@
 <p><%= @customer.email_address%></p>
 <p><%= @customer.password%></p>
 <%= link_to "編集", edit_customer_path(@customer) %>
-<%= link_to "削除", customers_path(@customer.id), method: :delete %>
+<%= button_to "削除", customer_path(@customer.id), method: :delete %>
