@@ -15,6 +15,7 @@
 #     # Specify URI for violation reports
 #     # policy.report_uri "/csp-violation-report-endpoint"
 #   end
+
 #
 #   # Generate session nonces for permitted importmap, inline scripts, and inline styles.
 #   config.content_security_policy_nonce_generator = ->(request) { request.session.id.to_s }
