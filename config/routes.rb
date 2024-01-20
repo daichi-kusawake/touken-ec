@@ -8,11 +8,14 @@ Rails.application.routes.draw do
   get 'signup',to:'signup#new'
   post 'signup',to:'signup#create'
 
+  #custemersコントローラーへのルーティング
+  resources :customers
+
   #個人情報
-  get 'customers/:id',to:'customers#show',as: 'customer'
+  #get 'customers/:id',to:'customers#show',as: 'customer'
 
   #顧客一覧
-  get 'customers',to:"customers#index"
+  #get 'customers',to:"customers#index"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

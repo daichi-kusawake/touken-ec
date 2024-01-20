@@ -1,9 +1,10 @@
 <h1>個人情報</h1>
+
 <p><%= @customer.family_name%></p>
 <p><%= @customer.last_name%></p>
 <p><%= @customer.family_name_furigana%></p>
-<%= @customer.last_name_furigana%></p>
-<%= @customer.email_address%></p>
-<%= @customer.password%></p>
-<%= @customer.created_at%></p>
-<%= @customer.updated_at%></p>
+<p><%= @customer.last_name_furigana%></p>
+<p><%= @customer.email_address%></p>
+<p><%= @customer.password%></p>
+<%= link_to "編集", edit_customer_path(@customer) %>
+<%= link_to "削除", customers_path(@customer.id), method: :delete %>

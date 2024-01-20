@@ -1,0 +1,24 @@
+<h1>会員編集画面</h1>
+
+<%= form_for(@customer, url: customer_path(@customer)) do |customer| %>
+    <div>
+        <%= customer.text_field :family_name, autofocus: true, :placeholder =>"#{@customer.family_name}" %>
+    </div>
+    <div>
+        <%= customer.text_field :last_name, autofocus: true, :placeholder =>"#{@customer.last_name}" %>
+    </div>
+    <div>
+        <%= customer.text_field :family_name_furigana, autofocus: true, :placeholder =>"#{@customer.family_name_furigana}" %>
+    </div>
+    <div>
+        <%= customer.text_field :last_name_furigana, autofocus: true, :placeholder =>"#{@customer.last_name_furigana}" %>
+    </div>
+    <div>
+        <%= customer.text_field :email_address, autofocus: true, :placeholder =>"#{@customer.email_address}" %>
+    </div>
+    <div>
+        <%= customer.text_field :password, autofocus: true, :placeholder =>"#{@customer.password}" %>
+    </div>
+
+    <div><%= customer.submit "更新する" %></div>
+<% end %>
