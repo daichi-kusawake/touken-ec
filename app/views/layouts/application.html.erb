@@ -6,6 +6,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= javascript_importmap_tags %>
     <%= csrf_meta_tags %>
+    
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
       </script>
@@ -17,8 +18,8 @@
         <nav>
           <ul>
             <li><%= link_to "HOME",'customers' %></li>
-            <li><%= link_to "Signup",'signup' %></li>
-            <li><%= link_to "Login",'signup' %></li>
+            <li><%= link_to "Signup",'customers/new' %></li>
+            <li><%= link_to "Login",'customers/new' %></li>
           </ul>
         </nav>
       </div>
