@@ -1,0 +1,13 @@
+<h1>ログイン</h1>
+<%= form_for(:session, url: login_path) do |customer| %>
+    <div>
+        <%= form.label :email_address %>
+        <%= form.text_field :email_address, placeholder: "user@example.com"%>
+    </div>
+  
+    <div>
+        <%= form.label :password %>
+        <%= form.password_field :password, placeholder: "Please enter your password"%>
+    </div>
+    <%= f.submit "Log in" %>
+<% end %>
