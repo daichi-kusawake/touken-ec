@@ -28,7 +28,7 @@ class CustomersController < ApplicationController
     redirect_to :index
   end
 
-
+  private
   def customer_params
     params.require(:customer).permit(:family_name,:last_name,:family_name_furigana,:last_name_furigana,:email_address,:password)
   end
