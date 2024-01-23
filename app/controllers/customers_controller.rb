@@ -6,7 +6,7 @@ class CustomersController < ApplicationController
 
   def show
     #顧客詳細表示
-    #v送られてidをmodelから検索する
+    #送られたidを条件にしてmodelから検索する
     @customer = Customer.find(params[:id])
   end
 
