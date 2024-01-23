@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'signup',to:'signup#new'
   post 'signup',to:'signup#create'
 
-  #custemersコントローラーへのルーティング
+  #customerのルーティング
   resources :customers
 
   #個人情報

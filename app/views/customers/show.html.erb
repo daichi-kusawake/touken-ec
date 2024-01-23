@@ -8,3 +8,4 @@
 <p><%= @customer.password%></p>
 <%= link_to "編集", edit_customer_path(@customer) %>
 <%= link_to "削除", @customer, data: {turbo_confirm: '削除しますよ？', turbo_method: :delete} %>
+
