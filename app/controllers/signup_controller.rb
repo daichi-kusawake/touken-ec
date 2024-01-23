@@ -11,7 +11,7 @@ class SignupController < ApplicationController
         @customer = Customer.new(customer_params)
 
         if @customer.save
-            redirect_to root_path, notice:"アカウントを作成しました。"
+            redirect_to root_path
         else
             render :new
         end
