@@ -13,7 +13,8 @@ class SignupController < ApplicationController
         if @customer.save
             redirect_to root_path
         else
-            render :new
+            #turboの場合にバリデーション失敗のエラー表示ができない為、Unprocessable Entityを返すよう指定
+            render :new, status: :unprocessable_entity
         end
     end
 
