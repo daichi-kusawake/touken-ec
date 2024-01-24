@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   get 'signup',to:'signup#new'
   post 'signup',to:'signup#create'
 
+<<<<<<< HEAD
   #custemersコントローラーへのルーティング
+=======
+  #customerのルーティング
+>>>>>>> 9568a2cef54ca2d23426e59391f9a6844bac3f06
   resources :customers
 
   #個人情報
