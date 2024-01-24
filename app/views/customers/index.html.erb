@@ -1,4 +1,9 @@
 <h1>顧客一覧</h1>
+<% if logged_in? %>
+    <%= render 'customers/logged_in' %>
+<% else %>
+    <%= render 'customers/not_logged_in' %>
+<% end %>
 
 <table border="1">
     <tr>

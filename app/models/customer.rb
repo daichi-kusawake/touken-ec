@@ -1,7 +1,7 @@
 class Customer < ApplicationRecord
 
     #パスワードのハッシュ化
-    #has_secure_password
+    has_secure_password
 
     #バリデーション　空の場合に作成しないようにする
     validates :family_name, presence: true

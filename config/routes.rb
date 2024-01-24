@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+  get 'sessions/destroy'
+  get 'sessions/create'
 
   #トップページ
   root to:'customers#index'
 
-
-  #サインページ
-  get 'signup',to:'signup#new'
-  post 'signup',to:'signup#create'
+  #ログイン/ログアウト機能
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
 
   #customerのルーティング
   resources :customers

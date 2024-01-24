@@ -6,7 +6,7 @@ one:
   family_name_furigana: MyString
   last_name_furigana: MyString
   email_address: MyString
-  password: MyString
+  password_digest: MyString
 
 
 two:
@@ -15,4 +15,4 @@ two:
   family_name_furigana: MyString
   last_name_furigana: MyString
   email_address: MyString
-  password: MyString
+  password_digest: MyString

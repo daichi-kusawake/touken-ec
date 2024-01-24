@@ -1,5 +1,8 @@
 class CustomersController < ApplicationController
 
+  #アクション実行前にログインしているか判定
+  before_action :logged_in_customer,only:[:show,:update,:destroy]
+
   def index
     #顧客一覧
     @customers = Customer.all
@@ -52,7 +55,8 @@ class CustomersController < ApplicationController
 
   private
   def customer_params
-    params.require(:customer).permit(:family_name,:last_name,:family_name_furigana,:last_name_furigana,:email_address,:password)
+    #ストロングパラメータ
+    params.require(:customer).permit(:family_name,:last_name,:family_name_furigana,:last_name_furigana,:email_address,:password, :password_confirmation)
   end
 
 end
