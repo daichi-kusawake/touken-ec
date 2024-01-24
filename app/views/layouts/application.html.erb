@@ -19,10 +19,17 @@
           <ul>
             <li><%= link_to "HOME",customers_path %></li>
             <li><%= link_to "Signup",new_customer_path %></li>
-            <li><%= link_to "Login",sessions_new_path %></li>
+            <li><%= link_to "Login",login_path %></li>
           </ul>
         </nav>
       </div>
+
+      <!--ログイン状態の判定-->
+      <% if logged_in? %>
+        <%= render 'customers/logged_in' %>
+      <% else %>
+        <%= render 'customers/not_logged_in' %>
+      <% end %>
     </header>
     <div>
       <%= yield %>

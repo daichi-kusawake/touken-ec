@@ -6,9 +6,7 @@ class CreateCustomers < ActiveRecord::Migration[7.1]
       t.string :family_name_furigana,null: false
       t.string :last_name_furigana,null: false
       t.string :email_address,null: false
-      t.string :password_digest
-
-
+      t.string :password_digest,null: false
       t.timestamps
     end
   end

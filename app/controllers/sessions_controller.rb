@@ -2,9 +2,6 @@ class SessionsController < ApplicationController
   def new
   end
 
-  def destroy
-  end
-
   #ログイン処理
   def create
     customer = Customer.find_by(email_address: params[:session][:email_address].downcase)
@@ -14,9 +11,9 @@ class SessionsController < ApplicationController
     #有効なユーザー　パスワード[FALSE] == FALSE
     #有効なユーザー　パスワード[TRUE] == TRUE
     log_in customer
-    redirect_to root_path
+    redirect_to customer_path(customer.id)
     else
-      #エラーメッセージを保持
+      #エラーメッセージ
       render 'new',status: :unprocessable_entity
     end
   end
@@ -24,6 +21,7 @@ class SessionsController < ApplicationController
   #ログアウト処理cookieに保存されているユーザー情報を削除
   def destroy
     log_out if logged_in?
+    redirect_to root_path
   end
 
 end

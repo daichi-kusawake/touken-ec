@@ -10,7 +10,7 @@ module SessionsHelper
   def current_customer
     #現在ログイン中のユーザーを返す
     if session[:customer_id]
-      @current_customer ||= Customer.find_by(id: session[:user_id])
+      @current_customer ||= Customer.find_by(id: session[:customer_id])
     end
   end
 

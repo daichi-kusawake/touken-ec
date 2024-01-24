@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'sessions/destroy'
-  get 'sessions/create'
-
   #トップページ
   root to:'customers#index'
 
@@ -28,12 +24,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index
-
-  #ユーザー登録
-
-  #get 'help' =>'staic_pages#home'
-  #get 'about' =>'static_pages#help'
-  #get 'contact' => 'static_pages#contact'
-  #get 'signup' => 'customers#new'
-
 end
