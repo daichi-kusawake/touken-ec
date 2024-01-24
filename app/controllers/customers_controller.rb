@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
 
   #アクション実行前にログインしているか判定
-  before_action :logged_in_customer,only:[:show,:update,:destroy]
+  before_action :logged_in_customer,only:[:edit,:show,:update,:destroy]
 
   def index
     #顧客一覧
