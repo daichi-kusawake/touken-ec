@@ -28,7 +28,7 @@ class CustomersController < ApplicationController
     #削除機能
     customer = Customer.find(params[:id])
     customer.destroy
-    redirect_to :index
+    redirect_to root_path
   end
 
   private
