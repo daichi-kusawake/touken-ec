@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'products/new'
+  get 'products/show'
+  get 'products/index'
+  get 'products/destroy'
+  get 'products/edit'
+  get 'products/create'
   #トップページ
   root to:'customers#index'
 
