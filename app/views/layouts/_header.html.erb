@@ -1,0 +1,20 @@
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "TOUKEN", '#', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "HOME",customers_path %></li>
+            <li><%= link_to "Signup",new_customer_path %></li>
+            <li><%= link_to "Login",login_path %></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!--ログイン状態の判定-->
+      <% if logged_in? %>
+        <%= render 'customers/logged_in' %>
+      <% else %>
+        <%= render 'customers/not_logged_in' %>
+      <% end %>
+    </header>
+    
