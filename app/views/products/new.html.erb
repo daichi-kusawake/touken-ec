@@ -1,2 +1,52 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
+<% provide(:title,'Product registration')%>
+<h1>Product registration</h1>
+<div class= "container">
+    <div class="col-md-6 col-md-offset-3">
+    <%= form_with model: @product, url: products_path do |form| %>
+    
+        <!--エラー出力-->
+        <% if form.object.errors.any? %>
+            <div id="error_explanation">
+                <div class="alert alert-danger">
+                    <%= pluralize(@product.errors.count, "error") %>
+                    <ul>
+                        <% form.object.errors.full_messages.each do |message|  %>
+                        <li><%= message %></li>
+                        <% end  %>
+                    </ul>
+                </div>
+            </div>
+        <% end %>
+        <!--入力フォーム-->  
+        <%= form.label :product_name %>
+        <%= form.text_field :product_name, placeholder: "商品名" %>
+        
+        <%= form.label :description %>
+        <%= form.text_field :description, placeholder: "商品説明"%>
+        
+        <%= form.label :article_category_id %>
+        <%= form.text_field :article_category_id, placeholder: "品物カテゴリID"%>
+        
+        <%= form.label :article_id %>
+        <%= form.text_field :article_id, placeholder: "品物ID"%>
+        
+        <%= form.label :appraisal_document_id %>
+        <%= form.text_field :appraisal_document_id, placeholder: "鑑定書ID"%>
+        
+        <%= form.label :country_id %>
+        <%= form.text_field :country_id, placeholder: "国ID"%>
+        
+        <%= form.label :era_id %>
+        <%= form.text_field :era_id, placeholder: "時代ID"%>
+        
+        <%= form.label :sign_id %>
+        <%= form.text_field :sign_id, placeholder: "銘"%>
+        
+        <%= form.label :sales_status %>
+        <%= form.text_field :sales_status, placeholder: "販売ステータス"%>
+        
+        <%= form.submit%>
+        <% end %>
+    </div>
+</div>
+

@@ -57,13 +57,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_24_145026) do
     t.index ["customer_id"], name: "index_delivery_destinations_on_customer_id"
   end
 
-  create_table "enemies", force: :cascade do |t|
-    t.string "name"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "eras", force: :cascade do |t|
     t.string "era"
     t.string "era_name"
@@ -146,7 +139,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_24_145026) do
     t.integer "country_id", null: false
     t.integer "era_id", null: false
     t.integer "sign_id", null: false
-    t.integer "japanese_sword_id", null: false
     t.integer "sales_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -154,19 +146,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_24_145026) do
     t.index ["article_category_id"], name: "index_products_on_article_category_id"
     t.index ["country_id"], name: "index_products_on_country_id"
     t.index ["era_id"], name: "index_products_on_era_id"
-    t.index ["japanese_sword_id"], name: "index_products_on_japanese_sword_id"
     t.index ["sign_id"], name: "index_products_on_sign_id"
   end
 
   create_table "signs", force: :cascade do |t|
     t.string "sign_person"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tests", force: :cascade do |t|
-    t.string "name"
-    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -200,7 +184,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_24_145026) do
   add_foreign_key "products", "article_categories"
   add_foreign_key "products", "countries"
   add_foreign_key "products", "eras"
-  add_foreign_key "products", "japanese_swords"
   add_foreign_key "products", "signs"
   add_foreign_key "tosogus", "tosogu_categories"
 end

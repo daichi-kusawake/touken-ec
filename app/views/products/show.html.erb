@@ -1,2 +1,16 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<% provide(:title,'Product Details')%>
+<h1>Product Details</h1>
+<!--管理者が編集する用の商品詳細画面-->
+<div class="containar">
+    <p class="text-lowercase"><%= @product.product_name%></p>
+    <p class="text-lowercase"><%= @product.description%></p>
+    <p class="text-lowercase"><%= @product.article_category_id%></p>
+    <p class="text-lowercase"><%= @product.article_id%></p>
+    <p class="text-lowercase"><%= @product.appraisal_document_id%></p>
+    <p class="text-lowercase"><%= @product.country_id%></p>
+    <p class="text-lowercase"><%= @product.era_id%></p>
+    <p class="text-lowercase"><%= @product.sign_id%></p>
+    <p class="text-lowercase"><%= @product.sales_status%></p>
+    <%= link_to "編集", edit_product_path(@product) %>
+    <%= link_to "削除", @product, data: {turbo_confirm: '商品削除しますか？', turbo_method: :delete} %>
+</div>

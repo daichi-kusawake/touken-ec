@@ -1,2 +1,37 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<% provide(:title,'Products List')%>
+<h1>Products List</h1>
+
+<table class="table">
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">商品名</th>
+        <th scope="col">価格（消費税抜き）</th>
+        <th scope="col">商品説明</th>
+        <th scope="col">品物カテゴリID </th>
+        <th scope="col">品物ID</th>
+        <th scope="col">鑑定書ID</th>
+        <th scope="col">国ID</th>
+        <th scope="col">時代ID</th>
+        <th scope="col">銘ID</th>
+        <th scope="col">販売ID</th>
+        <th scope="col">作成日</th>
+        <th scope="col">更新日</th>
+    </tr>
+    <% @products.each do |product| %>
+        <tr>
+            <td scope="row"><%= product.id%></td>
+            <td scope="row"><%= product.product_name%></td>
+            <td scope="row"><%= product.description%></td>
+            <td scope="row"><%= product.article_category_id%></td>
+            <td scope="row"><%= product.article_id%></td>
+            <td scope="row"><%= product.appraisal_document_id%></td>
+            <td scope="row"><%= product.country_id%></td>
+            <td scope="row"><%= product.era_id%></td>
+            <td scope="row"><%= product.sign_id%></td>
+            <td scope="row"><%= product.sales_status%></td>
+            <td scope="row"><%= product.created_at%></td>
+            <td scope="row"><%= product.updated_at%></td>
+            
+        </tr>
+    <%end%>
+</table>

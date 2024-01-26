@@ -1,10 +1,24 @@
-<!--フォームにて登録-->
 <% provide(:title,'Sin up')%>
-<h1>新規登録</h1>
-<div class= "row">
+<h1>Sign up</h1>
+<div class= "container">
   <div class="col-md-6 col-md-offset-3">
     <%= form_with model: @customer, url: customers_path do |form| %>
-  
+      
+      <!--エラー出力-->
+      <% if form.object.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-danger">
+            <%= pluralize(@customer.errors.count, "error") %>
+            <ul>
+              <% form.object.errors.full_messages.each do |message|  %>
+                <li><%= message %></li>
+              <% end  %>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+      
+      <!--入力フォーム-->  
       <%= form.label :family_name %>
       <%= form.text_field :family_name, placeholder: "姓" %>
       
@@ -27,19 +41,6 @@
       <%= form.password_field :password_confirmation, placeholder: "Please enter your password again"%>
     
       <%= form.submit%>
-
-      <% if form.object.errors.any? %>
-        <div id="error_explanation">
-          <div class="alert alert-danger">
-            <%= pluralize(@customer.errors.count, "error") %>
-            <ul>
-              <% form.object.errors.full_messages.each do |message|  %>
-                <li><%= message %></li>
-              <% end  %>
-            </ul>
-          </div>
-        </div>
-      <% end %>
     <% end %>
   </div>
 </div>

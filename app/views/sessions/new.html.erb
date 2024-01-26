@@ -1,4 +1,5 @@
-<h1>ログイン</h1>
+<% provide(:title,'Login')%>
+<h1>Login</h1>
 <%= form_for(:session, url: login_path) do |form| %>
   <!--保存されている場合はUpdate,未保存はCreateアクションへ-->
   <%= form.label :email_address %>

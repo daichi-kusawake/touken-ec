@@ -1,2 +1,36 @@
-<h1>Products#edit</h1>
-<p>Find me in app/views/products/edit.html.erb</p>
+<% provide(:title,'Edit')%>
+<h1>Edit</h1>
+
+<%= form_for(@product, url: product_path(@product)) do |product| %>
+    <div>
+        <%= product.text_field :product_name, autofocus: true, :placeholder =>"#{@product.product_name}" %>
+    </div>
+    <div>
+        <%= product.text_field :description, autofocus: true, :placeholder =>"#{@product.description}" %>
+    </div>
+    <div>
+        <%= productr.text_field :article_category_id, autofocus: true, :placeholder =>"#{@product.article_category_id}" %>
+    </div>
+    <div>
+        <%= product.text_field :article_id, autofocus: true, :placeholder =>"#{@product.article_id}" %>
+    </div>
+    <div>
+        <%= product.text_field :appraisal_document_id, autofocus: true, :placeholder =>"#{@product.appraisal_document_id}" %>
+    </div>
+
+    <div>
+        <%= product.text_field :country_id, autofocus: true, :placeholder =>"#{@product.country_id}" %>
+    </div>
+    <div>
+        <%= product.text_field :era_id, autofocus: true, :placeholder =>"#{@product.era_id}" %>
+    </div>
+    <div>
+        <%= product.text_field :sign_id, autofocus: true, :placeholder =>"#{@product.sign_id}" %>
+    </div>
+    <div>
+        <%= product.text_field :sales_status, autofocus: true, :placeholder =>"#{@product.sales_status}" %>
+    </div>
+    <div>
+        <%= product.submit "更新する" %>
+    </div>
+<% end %>

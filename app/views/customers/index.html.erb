@@ -1,27 +1,30 @@
-<h1>顧客一覧</h1>
-<table border="1">
+<% provide(:title,'User List')%>
+<h1>User List</h1>
+
+<table class="table">
     <tr>
-        <th>id</th>
-        <th>姓</th>
-        <th>名</th>
-        <th>姓(フリガナ)</th>
-        <th>姓(ナマエ)</th>
-        <th>メールアドレス</th>
-        <th>パスワード</th>
-        <th>作成日</th>
-        <th>更新日</th>
+        <th scope="col">id</th>
+        <th scope="col">姓</th>
+        <th scope="col">名</th>
+        <th scope="col">姓(フリガナ)</th>
+        <th scope="col">姓(ナマエ)</th>
+        <th scope="col">メールアドレス</th>
+        <th scope="col">パスワード</th>
+        <th scope="col">作成日</th>
+        <th scope="col">更新日</th>
+        <th scope="col">変更</th>
     </tr>
     <% @customers.each do |customer| %>
         <tr>
-            <td><%= customer.id%></td>
-            <td><%= customer.family_name%></td>
-            <td><%= customer.last_name%></td>
-            <td><%= customer.family_name_furigana%></td>
-            <td><%= customer.last_name_furigana%></td>
-            <td><%= customer.email_address%></td>
-            <td><%= customer.password%></td>
-            <td><%= customer.created_at%></td>
-            <td><%= customer.updated_at%></td>
+            <td scope="row"><%= customer.id%></td>
+            <td scope="row"><%= customer.family_name%></td>
+            <td scope="row"><%= customer.last_name%></td>
+            <td scope="row"><%= customer.family_name_furigana%></td>
+            <td scope="row"><%= customer.last_name_furigana%></td>
+            <td scope="row"><%= customer.email_address%></td>
+            <td scope="row"><%= customer.password%></td>
+            <td scope="row"><%= customer.created_at%></td>
+            <td scope="row"><%= customer.updated_at%></td>
         </tr>
     <%end%>
 </table>

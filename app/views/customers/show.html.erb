@@ -1,11 +1,12 @@
-<h1>個人情報</h1>
-
-<p><%= @customer.family_name%></p>
-<p><%= @customer.last_name%></p>
-<p><%= @customer.family_name_furigana%></p>
-<p><%= @customer.last_name_furigana%></p>
-<p><%= @customer.email_address%></p>
-<p><%= @customer.password%></p>
-<%= link_to "編集", edit_customer_path(@customer) %>
-<%= link_to "削除", @customer, data: {turbo_confirm: '削除しますよ？', turbo_method: :delete} %>
-
+<% provide(:title,'My page')%>
+<h1>My Page</h1>
+<div class="containar">
+    <p class="text-lowercase"><%= @customer.family_name%></p>
+    <p class="text-lowercase"><%= @customer.last_name%></p>
+    <p class="text-lowercase"><%= @customer.family_name_furigana%></p>
+    <p class="text-lowercase"><%= @customer.last_name_furigana%></p>
+    <p class="text-lowercase"><%= @customer.email_address%></p>
+    <p class="text-lowercase"><%= @customer.password%></p>
+    <%= link_to "編集", edit_customer_path(@customer) %>
+    <%= link_to "削除", @customer, data: {turbo_confirm: 'アカウント削除しますか？', turbo_method: :delete} %>
+</div>

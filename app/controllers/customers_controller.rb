@@ -27,7 +27,7 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
 
     if @customer.save
-      flash[:success] = "Welcome to TOUKEN"
+      flash[:success] = "アカウントを作成しました"
       redirect_to root_path
     else
       #turboの場合にバリデーション失敗のエラー表示ができない為、Unprocessable Entityを返すよう指定

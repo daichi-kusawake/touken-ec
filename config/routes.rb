@@ -1,26 +1,19 @@
 Rails.application.routes.draw do
-  get 'products/new'
-  get 'products/show'
-  get 'products/index'
-  get 'products/destroy'
-  get 'products/edit'
-  get 'products/create'
-  #トップページ
+
+  #ルート設定
   root to:'customers#index'
 
+  
   #ログイン/ログアウト機能
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  #customerのルーティング
-  resources :customers
+  #Customersのルーティング
+  resources :customers 
 
-  #個人情報
-  #get 'customers/:id',to:'customers#show',as: 'customer'
-
-  #顧客一覧
-  #get 'customers',to:"customers#index"
+  #Productsのルーティング
+  resources :products
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -30,4 +23,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index
+
 end

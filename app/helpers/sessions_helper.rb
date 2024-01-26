@@ -30,4 +30,5 @@ module SessionsHelper
     session.delete(:customer_id)
     @current_customer = nil
   end
+  
 end
