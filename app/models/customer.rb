@@ -13,4 +13,10 @@ class Customer < ApplicationRecord
     validates :email_address, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :password, presence:true
 
+    # 渡された文字列のハッシュ値を返す
+    def Customer.digest(string)
+        cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+        BCrypt::Password.create(string, cost: cost)
+    end
+
 end

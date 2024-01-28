@@ -2,10 +2,11 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   private
-  #ログインしているか判定
+  #自分のアカウントでログインしているか判定
   def logged_in_customer
-    unless logged_in?
+    if logged_in?  && current_customer?(:customer)
       #もしログインしていなければ、ログイン画面へリダイレクト
+    else
       redirect_to login_path
     end
   end

@@ -18,3 +18,12 @@ two:
   last_name_furigana: MyString
   email_address: MyString
   password_digest: MyString
+
+michael:
+  family_name: Michael Example
+  last_name: Michael Example
+  family_name_furigana: Michael Example
+  last_name_furigana: Michael Example
+  email_address: michael@example.com
+  password_digest: <%= Customer.digest('password') %>
+
