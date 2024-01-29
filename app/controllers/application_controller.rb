@@ -4,9 +4,14 @@ class ApplicationController < ActionController::Base
   private
   #自分のアカウントでログインしているか判定
   def logged_in_customer
-    if logged_in?  && current_customer?(:customer)
+    unless logged_in?
       #もしログインしていなければ、ログイン画面へリダイレクト
-    else
+      redirect_to login_path
+    end
+  end
+
+  def logged_in_current_customer
+    unless current_customer?(@customer)
       redirect_to login_path
     end
   end

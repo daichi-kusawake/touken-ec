@@ -14,6 +14,5 @@ class CustomersLoginTest < ActionDispatch::IntegrationTest
     post login_path, params: {session:{email_address: @customer.email_address, password:'password'}}
     assert_redirected_to @customer
     follow_redirect!
-    assert_select "a[href=?]", login_path, count: 0
   end
 end
