@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      product:
+    attributes:
+      article_id:
+        japanese_sword: "日本刀"
+        tosogu: "刀装具"
+        kattyu: "甲冑"
+      sales_status:
+        sold_out: "売り切れ"
+        on_sale: "販売中"

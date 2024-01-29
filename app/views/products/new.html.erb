@@ -28,8 +28,8 @@
         <%= form.text_field :article_category_id, placeholder: "品物カテゴリID"%>
         
         <%= form.label :article_id %>
-        <%= form.text_field :article_id, placeholder: "品物ID"%>
-        
+        <%= form.select :article_id, Product.enum_options_for_select(:article_id), {prompt: "選択してください"}, class: "prefecture-select"%>
+
         <%= form.label :appraisal_document_id %>
         <%= form.text_field :appraisal_document_id, placeholder: "鑑定書ID"%>
         
@@ -43,8 +43,8 @@
         <%= form.text_field :sign_id, placeholder: "銘"%>
         
         <%= form.label :sales_status %>
-        <%= form.text_field :sales_status, placeholder: "販売ステータス"%>
-        
+        <%= form.select :sales_status, Product.enum_options_for_select(:sales_status), {prompt: "選択してください"}, class: "prefecture-select"%>
+
         <%= form.submit%>
         <% end %>
     </div>
