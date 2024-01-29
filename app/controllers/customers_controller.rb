@@ -1,8 +1,7 @@
 class CustomersController < ApplicationController
 
   #アクション実行前にログインしているか判定
-  before_action :logged_in_customer,only:[:edit,:show,:update,:destroy]
-
+  before_action :logged_in_customer,only:[:edit,:show,:destroy]
   def index
     #顧客一覧
     @customers = Customer.all
@@ -13,7 +12,7 @@ class CustomersController < ApplicationController
 
     #送られたidを条件にしてmodelから検索する
     @customer = Customer.find(params[:id])
-
+    logged_in_current_customer
   end
 
   #新規登録用：Customerのインスタンスを作成
@@ -27,6 +26,7 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
 
     if @customer.save
+      log_in @customer
       flash[:success] = "アカウントを作成しました"
       redirect_to root_path
     else
@@ -38,6 +38,7 @@ class CustomersController < ApplicationController
   def edit
     #編集
     @customer = Customer.find(params[:id])
+    logged_in_current_customer
   end
 
   def update
