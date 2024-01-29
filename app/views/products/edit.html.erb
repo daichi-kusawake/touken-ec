@@ -5,30 +5,35 @@
     <div>
         <%= product.text_field :product_name, autofocus: true, :placeholder =>"#{@product.product_name}" %>
     </div>
+
+    <div>
+        <%= product.text_field :tax_excluded_price, autofocus: true, :placeholder =>"#{@product.tax_excluded_price}" %>
+    </div>
+    
     <div>
         <%= product.text_field :description, autofocus: true, :placeholder =>"#{@product.description}" %>
     </div>
     <div>
-        <%= productr.text_field :article_category_id, autofocus: true, :placeholder =>"#{@product.article_category_id}" %>
+        <%= product.select :article_id, Product.enum_options_for_select(:article_id), {prompt: @product.article_id}, class: "prefecture-select"%>
     </div>
     <div>
-        <%= product.text_field :article_id, autofocus: true, :placeholder =>"#{@product.article_id}" %>
+        <%= product.collection_select(:article_category_id,ArticleCategory.all,:id,:article_category_name,class:"prefecture-select")%>
     </div>
     <div>
-        <%= product.text_field :appraisal_document_id, autofocus: true, :placeholder =>"#{@product.appraisal_document_id}" %>
+        <%= product.collection_select(:appraisal_document_id,AppraisalDocument.all,:id,:appraisal_document_name,class:"prefecture-select")%>
     </div>
 
     <div>
-        <%= product.text_field :country_id, autofocus: true, :placeholder =>"#{@product.country_id}" %>
+        <%= product.collection_select(:country_id,Country.all,:id,:country_name,class:"prefecture-select")%>
     </div>
     <div>
-        <%= product.text_field :era_id, autofocus: true, :placeholder =>"#{@product.era_id}" %>
+        <%= product.collection_select(:era_id,Era.all,:id,:era_name,class:"prefecture-select")%>
     </div>
     <div>
-        <%= product.text_field :sign_id, autofocus: true, :placeholder =>"#{@product.sign_id}" %>
+        <%= product.collection_select(:sign_id,Sign.all,:id,:sign_person,class:"prefecture-select")%>
     </div>
     <div>
-        <%= product.text_field :sales_status, autofocus: true, :placeholder =>"#{@product.sales_status}" %>
+        <%= product.select :sales_status, Product.enum_options_for_select(:sales_status),class: "prefecture-select"%>
     </div>
     <div>
         <%= product.submit "更新する" %>
