@@ -30,9 +30,9 @@
         <%= form.label :article_id %>
         <%= form.select :article_id, Product.enum_options_for_select(:article_id), {prompt: "選択してください"}, class: "prefecture-select"%>
 
-        <%= form.label :appraisal_document_id %>
-        <%= form.text_field :appraisal_document_id, placeholder: "鑑定書ID"%>
-        
+        <%= form.label :appraisal_document_name %>
+        <%= form.collection_select(:appraisal_document_id,AppraisalDocument.all,:id,:appraisal_document_name,{prompt: "選択してください"},class:"prefecture-select")%>
+
         <%= form.label :country_id %>
         <%= form.text_field :country_id, placeholder: "国ID"%>
         

@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = Product.new(product_params.merge(appraisal_document_id: params[:product][:appraisal_document_id]))
 
     if @product.save
       flash[:success] = "商品登録しました"

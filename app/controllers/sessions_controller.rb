@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     redirect_to customer_path(customer.id)
     else
       #フラッシュメッセージ
-      flash.now[:danger] = 'Invalid email/password combination' 
+      flash.now[:danger] = 'ログイン失敗しました' 
       render 'new',status: :unprocessable_entity
     end
   end
