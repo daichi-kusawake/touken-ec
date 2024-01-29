@@ -278,6 +278,8 @@ DEPENDENCIES
   mini_racer
   puma (>= 5.0)
   rails (~> 7.1.2)
+  rails-controller-testing
+  sassc-rails
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)
