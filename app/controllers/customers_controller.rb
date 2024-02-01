@@ -56,7 +56,8 @@ class CustomersController < ApplicationController
   private
   def customer_params
     #ストロングパラメータ
-    params.require(:customer).permit(:family_name,:last_name,:family_name_furigana,:last_name_furigana,:email_address,:password, :password_confirmation)
+    params.require(:customer).permit( :family_name, :last_name, :family_name_furigana,
+    :last_name_furigana, :email_address, :password, :password_confirmation)
   end
 
 end
