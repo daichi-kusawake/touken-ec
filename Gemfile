@@ -48,7 +48,7 @@ gem 'mini_racer'
 gem 'bootstrap', '~> 5.3.0'
 
 gem 'jquery-rails'
-gem "sassc-rails"
+gem "sassc-rails" 
 
 gem 'rails-controller-testing'
 
