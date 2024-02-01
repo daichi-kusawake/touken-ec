@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       #ユーザー存在しない パスワード[TRUE or FALSE] == FALSE
       #有効なユーザー　パスワード[FALSE] == FALSE
       #有効なユーザー　パスワード[TRUE] == TRUE
-        log_in customer
+        log_in(customer)
         redirect_to customer_path(customer.id)
     else
       #エラーメッセージ
