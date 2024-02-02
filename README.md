@@ -26,6 +26,8 @@ zshrcファイルでrbenvの初期化
 
 `source ~/.zshrc`
 
+Railsのインストール
+`gem install rails`
 Visual Studio Codeのインストール
 
 https://code.visualstudio.com/download
