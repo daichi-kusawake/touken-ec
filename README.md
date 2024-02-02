@@ -8,6 +8,23 @@
 ## 導入手順
 ### windows
 ### Mac
+rbenvのインストール
+
+`brew install rbenv ruby-build`
+
+バージョン確認
+
+`rbenv -v`
+
+zshrcファイルでrbenvの初期化
+
+`echo 'export RBENV_ROOT="$HOME/.rbenv"' >> ~/.zshrc`
+
+`echo 'export PATH="$RBENV_ROOT/bin:$PATH"' >> ~/.zshrc`
+
+`echo 'eval "$(rbenv init -)"' >>  ~/.zshrc`
+
+`source ~/.zshrc`
 
 ## ER図
 ```mermaid
