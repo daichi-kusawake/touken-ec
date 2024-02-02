@@ -26,6 +26,10 @@ zshrcファイルでrbenvの初期化
 
 `source ~/.zshrc`
 
+Visual Studio Codeのインストール
+
+https://code.visualstudio.com/download
+
 ## ER図
 ```mermaid
 erDiagram
