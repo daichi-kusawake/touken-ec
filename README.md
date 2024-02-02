@@ -1,8 +1,12 @@
 # Ruby on ralisでECサイトの作成
 ## 開発環境
+Rails 7.1.2
+
+## 導入手順
+### windows
+### Mac
 
 ## ER図
-▼Memaid Chatを用いて設計
 ```mermaid
 erDiagram
 users ||--o{orders:""
@@ -104,9 +108,9 @@ kattyu{
 }
 ```
 
-▼draw.ioを用いて設計
-![ec drawio20230117](https://github.com/daichi-kusawake/touken-ec/assets/77773862/3c2e1eef-d29a-4731-9c45-f21be9ecf60f)
+▼draw.io
 
+![ec drawio](https://github.com/daichi-kusawake/touken-ec/assets/77773862/fa1d7416-5923-4fbf-b5d1-7b0c9616c6a6)
 
 ## ブランチ変更
 
