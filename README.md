@@ -1,6 +1,9 @@
 # Ruby on ralisでECサイトの作成
 ## 開発環境
-Rails 7.1.2
+- Ruby 3.2.2
+- Rails 7.1.2
+- MacOS sonoma 14.3
+- WindowsOS 
 
 ## 導入手順
 ### windows
