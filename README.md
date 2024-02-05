@@ -94,6 +94,7 @@ products{
     string description
     integer sales_status
     enum appraisal_document
+    enum country
     enum era
     enum era_name
     enum sign
