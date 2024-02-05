@@ -70,6 +70,7 @@ orders{
     integer id PK
     references user_id FK
     references delivery_destination_id FK
+    references product_id FK
     string payment_methods
     integer billing_amount
     integer shipping_fee
