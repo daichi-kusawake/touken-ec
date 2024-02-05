@@ -5,18 +5,25 @@ class SessionsController < ApplicationController
   #ログイン処理
   def create
     customer = Customer.find_by(email_address: params[:session][:email_address].downcase)
+
     if customer && customer.authenticate(params[:session][:password])
-    #認証が失敗した場合にFALSEを返す
-    #ユーザー存在しない パスワード[TRUE or FALSE] == FALSE
-    #有効なユーザー　パスワード[FALSE] == FALSE
-    #有効なユーザー　パスワード[TRUE] == TRUE
-    log_in customer
-    redirect_to customer_path(customer.id)
+      #認証が失敗した場合にFALSEを返す
+      #ユーザー存在しない パスワード[TRUE or FALSE] == FALSE
+      #有効なユーザー　パスワード[FALSE] == FALSE
+      #有効なユーザー　パスワード[TRUE] == TRUE
+        log_in(customer)
+        redirect_to customer_path(customer.id)
     else
       #フラッシュメッセージ
       flash.now[:danger] = 'Invalid email/password combination' 
       render 'new',status: :unprocessable_entity
     end
+  end
+
+  #ログイン時
+  def log_in(customer)
+    #送られたidを条件としてログインする
+    session[:customer_id] = customer.id
   end
 
   #ログアウト処理cookieに保存されているユーザー情報を削除

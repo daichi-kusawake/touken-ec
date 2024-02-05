@@ -1,11 +1,5 @@
 module SessionsHelper
 
-  #ログイン時
-  def log_in(customer)
-    #送られたidを条件としてログインする
-    session[:customer_id] = customer.id
-  end
-
   #ページ遷移時
   def current_customer
     #現在ログイン中のユーザーを返す
