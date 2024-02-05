@@ -1,2 +1,0 @@
-class JapaneseSwordCategory < ApplicationRecord
-end
