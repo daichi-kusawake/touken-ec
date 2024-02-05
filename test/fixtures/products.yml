@@ -5,13 +5,11 @@ one:
   tax_excluded_price: 1
   description: MyString
   product_category: one
-  japanese_sword: one
-  tosogu: one
-  kattyu: one
-  article_id: 1
+  article: 1
   appraisal_document: 1
   country: 1
   era: 1
+  era_name: 2
   sign: 1
   sales_status: 1
 
@@ -20,12 +18,10 @@ two:
   tax_excluded_price: 2
   description: MyString
   product_category: two
-  japanese_sword: two
-  tosogu: two
-  kattyu: two
-  article_id: 2
+  article: 2
   appraisal_document: 2
   country: 2
   era: 2
+  era_name: 2
   sign: 2
   sales_status: 2

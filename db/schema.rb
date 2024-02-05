@@ -77,24 +77,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_05_102704) do
 
   create_table "products", force: :cascade do |t|
     t.integer "product_category_id", null: false
-    t.integer "japanese_sword_id", null: false
-    t.integer "tosogu_id", null: false
-    t.integer "kattyu_id", null: false
     t.string "product_name"
     t.integer "tax_excluded_price"
     t.string "description"
     t.integer "article"
     t.integer "appraisal_document"
+    t.integer "country"
     t.integer "era"
     t.integer "era_name"
     t.integer "sign"
     t.integer "sales_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["japanese_sword_id"], name: "index_products_on_japanese_sword_id"
-    t.index ["kattyu_id"], name: "index_products_on_kattyu_id"
     t.index ["product_category_id"], name: "index_products_on_product_category_id"
-    t.index ["tosogu_id"], name: "index_products_on_tosogu_id"
   end
 
   create_table "tosogus", force: :cascade do |t|
@@ -126,8 +121,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_05_102704) do
   add_foreign_key "orders", "delivery_destinations"
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "users"
-  add_foreign_key "products", "japanese_swords"
-  add_foreign_key "products", "kattyus"
   add_foreign_key "products", "product_categories"
-  add_foreign_key "products", "tosogus"
 end

@@ -9,11 +9,12 @@
         <th scope="col">商品説明</th>
         <th scope="col">品物カテゴリID </th>
         <th scope="col">品物ID</th>
-        <th scope="col">鑑定書ID</th>
-        <th scope="col">国ID</th>
-        <th scope="col">時代ID</th>
-        <th scope="col">銘ID</th>
-        <th scope="col">販売ID</th>
+        <th scope="col">鑑定書</th>
+        <th scope="col">国</th>
+        <th scope="col">時代</th>
+        <th scope="col">年号</th>
+        <th scope="col">銘</th>
+        <th scope="col">販売ステータス</th>
         <th scope="col">作成日</th>
         <th scope="col">更新日</th>
     </tr>
@@ -23,12 +24,13 @@
             <td scope="row"><%= product.product_name%></td>
             <td scope="row"><%= product.tax_excluded_price%></td>
             <td scope="row"><%= product.description%></td>
-            <td scope="row"><%= product.article_category_id%></td>
-            <td scope="row"><%= product.article_id%></td>
-            <td scope="row"><%= product.appraisal_document_id%></td>
-            <td scope="row"><%= product.country_id%></td>
-            <td scope="row"><%= product.era_id%></td>
-            <td scope="row"><%= product.sign_id%></td>
+            <td scope="row"><%= product.product_category_id%></td>
+            <td scope="row"><%= product.article%></td>
+            <td scope="row"><%= product.appraisal_document%></td>
+            <td scope="row"><%= product.country%></td>
+            <td scope="row"><%= product.era%></td>
+            <td scope="row"><%= product.era_name%></td
+            <td scope="row"><%= product.sign%></td>
             <td scope="row"><%= product.sales_status%></td>
             <td scope="row"><%= product.created_at%></td>
             <td scope="row"><%= product.updated_at%></td>

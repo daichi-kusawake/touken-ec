@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
 
   #アクション実行前にログインしているか判定
-  before_action :logged_in_User,only:[:edit,:show,:destroy]
+  before_action :logged_in_user,only:[:edit,:show,:destroy]
 
   def index
-    #顧客一覧
     @users = User.all
   end
 

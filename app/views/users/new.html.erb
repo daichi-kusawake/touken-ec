@@ -3,7 +3,6 @@
 <div class= "container">
   <div class="col-md-6 col-md-offset-3">
     <%= form_with model: @user, url: users_path do |form| %>
-      
       <!--エラー出力-->
       <% if form.object.errors.any? %>
         <div id="error_explanation">
@@ -17,29 +16,28 @@
           </div>
         </div>
       <% end %>
-      
-      <!--入力フォーム-->  
+
+      <!--入力フォーム-->
       <%= form.label :family_name %>
       <%= form.text_field :family_name, placeholder: "姓" %>
-      
+
       <%= form.label :last_name %>
       <%= form.text_field :last_name, placeholder: "名"%>
-    
+
       <%= form.label :family_name_furigana %>
       <%= form.text_field :family_name_furigana, placeholder: "姓（フリガナ）"%>
-    
+
       <%= form.label :last_name_furigana %>
       <%= form.text_field :last_name_furigana, placeholder: "名（フリガナ）"%>
-    
+
       <%= form.label :email_address %>
       <%= form.text_field :email_address, placeholder: "user@example.com"%>
-    
+
       <%= form.label :password %>
       <%= form.password_field :password, placeholder: "Please enter your password"%>
-    
+
       <%= form.label :password_confirmation %>
       <%= form.password_field :password_confirmation, placeholder: "Please enter your password again"%>
-    
       <%= form.submit%>
     <% end %>
   </div>

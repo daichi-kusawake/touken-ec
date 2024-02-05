@@ -3,14 +3,14 @@ ja:
     models:
       product:
     attributes:
-      article_id:
+      article:
         japanese_sword: "日本刀"
         tosogu: "刀装具"
         kattyu: "甲冑"
       sales_status:
         sold_out: "売り切れ"
         on_sale: "販売中"
-      appraisal_document_name: "鑑定書"
+      appraisal_document: "鑑定書"
           #preserved_sword: "保存刀剣"
           #specially_preserved_sword: "特別保存刀剣"
           #important_sword: "重要刀剣"

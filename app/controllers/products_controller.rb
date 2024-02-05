@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     #削除
     product = Product.find(params[:id])
     product.destroy
-    
+
     #ルートパスへリダイレクト
     redirect_to products_path
   end
@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params.merge(article_category_id: params[:product][:article_category_id],appraisal_document_id: params[:product][:appraisal_document_id],country_id: params[:product][:country_id],era_id: params[:product][:era_id],sign_id: params[:product][:sign_id]))
+    @product = Product.new(product_params.merge(product_category_id: params[:product][:product_category_id]))
 
     if @product.save
       flash[:success] = "商品登録しました"
@@ -45,10 +45,11 @@ class ProductsController < ApplicationController
       product.update(product_params)
       redirect_to product_path(product.id)
     end
-  
+
   private
   def product_params
     #ストロングパラメータ
-    params.require(:product).permit(:product_name,:tax_excluded_price,:description,:article_category_id,:article_id,:appraisal_document_id, :country_id,:era_id,:sign_id,:sales_status)
+    params.require(:product).permit(:product_name,:tax_excluded_price,:description,
+    :product_category_id,:article,:appraisal_document, :country,:era, :era_name, :sign, :sales_status)
   end
 end

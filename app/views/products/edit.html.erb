@@ -9,15 +9,15 @@
     <div>
         <%= product.text_field :tax_excluded_price, autofocus: true, :placeholder =>"#{@product.tax_excluded_price}" %>
     </div>
-    
+
     <div>
         <%= product.text_field :description, autofocus: true, :placeholder =>"#{@product.description}" %>
     </div>
     <div>
-        <%= product.select :article_id, Product.enum_options_for_select(:article_id), {prompt: @product.article_id}, class: "prefecture-select"%>
+        <%= product.select :article, Product.enum_options_for_select(:article), {prompt: @product.article}, class: "prefecture-select"%>
     </div>
     <div>
-        <%= product.collection_select(:article_category_id,ArticleCategory.all,:id,:article_category_name,class:"prefecture-select")%>
+        <%= product.collection_select(:product_category_id,ArticleCategory.all,:id,:product_category_name,class:"prefecture-select")%>
     </div>
     <div>
         <%= product.collection_select(:appraisal_document_id,AppraisalDocument.all,:id,:appraisal_document_name,class:"prefecture-select")%>
