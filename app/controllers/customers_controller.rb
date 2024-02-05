@@ -26,11 +26,8 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
 
     if @customer.save
-<<<<<<< HEAD
-      flash[:success] = "アカウントを作成しました"
-=======
       log_in @customer
->>>>>>> customers-login
+      flash[:success] = "アカウントを作成しました"
       redirect_to root_path
     else
       #turboの場合にバリデーション失敗のエラー表示ができない為、Unprocessable Entityを返すよう指定

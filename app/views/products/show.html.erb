@@ -3,14 +3,15 @@
 <!--管理者が編集する用の商品詳細画面-->
 <div class="containar">
     <p class="text-lowercase"><%= @product.product_name%></p>
+    <p class="text-lowercase"><%= @product.tax_excluded_price%></p>
     <p class="text-lowercase"><%= @product.description%></p>
-    <p class="text-lowercase"><%= @product.article_category_id%></p>
+    <p class="text-lowercase"><%= ArticleCategory.find(@product.article_category_id).article_category_name%></p>
     <p class="text-lowercase"><%= @product.article_id%></p>
-    <p class="text-lowercase"><%= @product.appraisal_document_id%></p>
-    <p class="text-lowercase"><%= @product.country_id%></p>
-    <p class="text-lowercase"><%= @product.era_id%></p>
-    <p class="text-lowercase"><%= @product.sign_id%></p>
-    <p class="text-lowercase"><%= @product.sales_status%></p>
+    <p class="text-lowercase"><%= AppraisalDocument.find(@product.appraisal_document_id).appraisal_document_name%></p>
+    <p class="text-lowercase"><%= Country.find(@product.country_id).country_name%></p>
+    <p class="text-lowercase"><%= Era.find(@product.era_id).era_name%></p>
+    <p class="text-lowercase"><%= Sign.find(@product.sign_id).sign_person%></p>
+    <p class="text-lowercase"><%= @product.sales_status_i18n%></p>
     <%= link_to "編集", edit_product_path(@product) %>
     <%= link_to "削除", @product, data: {turbo_confirm: '商品削除しますか？', turbo_method: :delete} %>
 </div>
