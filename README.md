@@ -5,7 +5,6 @@
 - MacOS sonoma 14.3
 - WindowsOS 11(22H2)
     - Ubuntu 22.04.3LTS
-    - 
 
 # 導入手順
 ## windows
