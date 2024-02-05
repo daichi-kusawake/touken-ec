@@ -11,6 +11,9 @@ one:
   last_name_furigana: MyString
   email_address: MyString
   password_digest: MyString
+  postal_code: MyString
+  address: MyString
+  account_status: 1
 two:
   family_name: MyString
   last_name: MyString
@@ -18,6 +21,9 @@ two:
   last_name_furigana: MyString
   email_address: MyString
   password_digest: MyString
+  postal_code: MyString
+  address: MyString
+  account_status: 1
 
 michael:
   family_name: Michael Example
@@ -26,4 +32,6 @@ michael:
   last_name_furigana: Michael Example
   email_address: michael@example.com
   password_digest: <%= User.digest('password') %>
-
+  postal_code: MyString
+  address: MyString
+  account_status: 1

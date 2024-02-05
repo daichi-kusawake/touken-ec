@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_24_145026) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_05_102704) do
   create_table "administrators", force: :cascade do |t|
     t.string "email_address"
     t.string "password_digest"
@@ -29,7 +29,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_24_145026) do
   end
 
   create_table "japanese_swords", force: :cascade do |t|
-    t.integer "japanese_sword_category_id", null: false
     t.float "blade_length"
     t.float "curvature"
     t.float "width_at_the_hamachi"
@@ -42,21 +41,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_24_145026) do
     t.integer "guns_sword_registration_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["japanese_sword_category_id"], name: "index_japanese_swords_on_japanese_sword_category_id"
   end
 
   create_table "kattyus", force: :cascade do |t|
-    t.integer "kattyu_category_id", null: false
     t.string "odoshiito"
     t.string "hachi"
     t.boolean "kabutodai"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["kattyu_category_id"], name: "index_kattyus_on_kattyu_category_id"
   end
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id", null: false
+    t.integer "delivery_destination_id", null: false
+    t.integer "product_id", null: false
     t.string "addressee"
     t.string "delivery_postal_code"
     t.string "delivery_address"
@@ -66,31 +64,40 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_24_145026) do
     t.integer "order_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["delivery_destination_id"], name: "index_orders_on_delivery_destination_id"
+    t.index ["product_id"], name: "index_orders_on_product_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "product_categories", force: :cascade do |t|
+    t.string "category_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", force: :cascade do |t|
+    t.integer "product_category_id", null: false
+    t.integer "japanese_sword_id", null: false
+    t.integer "tosogu_id", null: false
+    t.integer "kattyu_id", null: false
     t.string "product_name"
     t.integer "tax_excluded_price"
     t.string "description"
-    t.integer "article_category_id", null: false
-    t.integer "article_id"
-    t.integer "appraisal_document_id", null: false
-    t.integer "country_id", null: false
-    t.integer "era_id", null: false
-    t.integer "sign_id", null: false
+    t.integer "article"
+    t.integer "appraisal_document"
+    t.integer "era"
+    t.integer "era_name"
+    t.integer "sign"
     t.integer "sales_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["appraisal_document_id"], name: "index_products_on_appraisal_document_id"
-    t.index ["article_category_id"], name: "index_products_on_article_category_id"
-    t.index ["country_id"], name: "index_products_on_country_id"
-    t.index ["era_id"], name: "index_products_on_era_id"
-    t.index ["sign_id"], name: "index_products_on_sign_id"
+    t.index ["japanese_sword_id"], name: "index_products_on_japanese_sword_id"
+    t.index ["kattyu_id"], name: "index_products_on_kattyu_id"
+    t.index ["product_category_id"], name: "index_products_on_product_category_id"
+    t.index ["tosogu_id"], name: "index_products_on_tosogu_id"
   end
 
   create_table "tosogus", force: :cascade do |t|
-    t.integer "tosogu_category_id", null: false
     t.string "shape"
     t.boolean "in_paulownia_wood_box"
     t.float "length"
@@ -99,7 +106,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_24_145026) do
     t.float "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["tosogu_category_id"], name: "index_tosogus_on_tosogu_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -109,18 +115,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_24_145026) do
     t.string "last_name_furigana", null: false
     t.string "email_address", null: false
     t.string "password_digest", null: false
+    t.string "postal_code", null: false
+    t.string "address", null: false
+    t.boolean "account_status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_foreign_key "delivery_destinations", "users"
-  add_foreign_key "japanese_swords", "japanese_sword_categories"
-  add_foreign_key "kattyus", "kattyu_categories"
+  add_foreign_key "orders", "delivery_destinations"
+  add_foreign_key "orders", "products"
   add_foreign_key "orders", "users"
-  add_foreign_key "products", "appraisal_documents"
-  add_foreign_key "products", "article_categories"
-  add_foreign_key "products", "countries"
-  add_foreign_key "products", "eras"
-  add_foreign_key "products", "signs"
-  add_foreign_key "tosogus", "tosogu_categories"
+  add_foreign_key "products", "japanese_swords"
+  add_foreign_key "products", "kattyus"
+  add_foreign_key "products", "product_categories"
+  add_foreign_key "products", "tosogus"
 end

@@ -1,8 +1,8 @@
 require "test_helper"
 
-class CustomersLoginTest < ActionDispatch::IntegrationTest
+class UsersLoginTest < ActionDispatch::IntegrationTest
   def setup
-    @customer = customers(:michael)
+    @user = users(:michael)
   end
 
   test "login whith invaild information" do
@@ -11,8 +11,8 @@ class CustomersLoginTest < ActionDispatch::IntegrationTest
     assert_template 'sessions/new'
 
     #ログインの検証
-    post login_path, params: {session:{email_address: @customer.email_address, password:'password'}}
-    assert_redirected_to @customer
+    post login_path, params: {session:{email_address: @user.email_address, password:'password'}}
+    assert_redirected_to @user
     follow_redirect!
   end
 end
