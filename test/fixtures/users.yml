@@ -25,5 +25,5 @@ michael:
   family_name_furigana: Michael Example
   last_name_furigana: Michael Example
   email_address: michael@example.com
-  password_digest: <%= Customer.digest('password') %>
+  password_digest: <%= User.digest('password') %>
 

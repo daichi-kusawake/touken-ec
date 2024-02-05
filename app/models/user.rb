@@ -1,4 +1,4 @@
-class Customer < ApplicationRecord
+class User < ApplicationRecord
     #パスワードのハッシュ化
     #仮想的な属性:password,password_confirmationが使用可能
     #ハッシュ化したパスワードをpassword_digestに保存可能
@@ -14,7 +14,7 @@ class Customer < ApplicationRecord
     validates :password, presence:true
 
     # 渡された文字列のハッシュ値を返す
-    def Customer.digest(string)
+    def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
         BCrypt::Password.create(string, cost: cost)
     end

@@ -1,0 +1,12 @@
+<% provide(:title,'My page')%>
+<h1>My Page</h1>
+<div class="containar">
+    <p class="text-lowercase"><%= @user.family_name%></p>
+    <p class="text-lowercase"><%= @user.last_name%></p>
+    <p class="text-lowercase"><%= @user.family_name_furigana%></p>
+    <p class="text-lowercase"><%= @user.last_name_furigana%></p>
+    <p class="text-lowercase"><%= @user.email_address%></p>
+    <p class="text-lowercase"><%= @user.password%></p>
+    <%= link_to "編集", edit_user_path(@user) %>
+    <%= link_to "削除", @user, data: {turbo_confirm: 'アカウント削除しますか？', turbo_method: :delete} %>
+</div>

@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
 
   #ルート設定
-  root to:'customers#index'
+  root to:'users#index'
 
-  
+
   #ログイン/ログアウト機能
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  #Customersのルーティング
-  resources :customers 
+  #usersのルーティング
+  resources :users
 
   #Productsのルーティング
   resources :products
