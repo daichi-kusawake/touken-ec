@@ -17,20 +17,23 @@
         <%= product.select :article, Product.enum_options_for_select(:article), {prompt: @product.article}, class: "prefecture-select"%>
     </div>
     <div>
-        <%= product.collection_select(:product_category_id,ArticleCategory.all,:id,:product_category_name,class:"prefecture-select")%>
+        <%= product.collection_select(:product_category_id,ProductCategory.all,:id,:category_name,class:"prefecture-select")%>
     </div>
     <div>
-        <%= product.collection_select(:appraisal_document_id,AppraisalDocument.all,:id,:appraisal_document_name,class:"prefecture-select")%>
+        <%= product.select :appraisal_document, Product.enum_options_for_select(:appraisal_document), {prompt: @product.appraisal_document}, class: "prefecture-select"%>
     </div>
 
     <div>
-        <%= product.collection_select(:country_id,Country.all,:id,:country_name,class:"prefecture-select")%>
+        <%= product.select :country, Product.enum_options_for_select(:country), {prompt: @product.country}, class: "prefecture-select"%>
     </div>
     <div>
-        <%= product.collection_select(:era_id,Era.all,:id,:era_name,class:"prefecture-select")%>
+        <%= product.select :era, Product.enum_options_for_select(:era), {prompt: @product.era}, class: "prefecture-select"%>
     </div>
     <div>
-        <%= product.collection_select(:sign_id,Sign.all,:id,:sign_person,class:"prefecture-select")%>
+        <%= product.select :era_name, Product.enum_options_for_select(:era_name), {prompt: @product.era_name}, class: "prefecture-select"%>
+    </div>
+    <div>
+        <%= product.select :sign, Product.enum_options_for_select(:sign), {prompt: @product.sign}, class: "prefecture-select"%>
     </div>
     <div>
         <%= product.select :sales_status, Product.enum_options_for_select(:sales_status),class: "prefecture-select"%>

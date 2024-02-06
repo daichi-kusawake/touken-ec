@@ -111,6 +111,9 @@
 #     country_name:"豊後国高田"
 # )
 
+ProductCategory.create(
+  category_name:"脇差"
+)
 
 # #時代
 # Era.create(

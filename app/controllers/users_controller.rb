@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
     #送られたidを条件にしてmodelから検索する
     @user = User.find(params[:id])
-    logged_in_current_User
+    logged_in_current_user
   end
 
   #新規登録用：Userのインスタンスを作成
