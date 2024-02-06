@@ -63,7 +63,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update_attribute(:account_status,false)
     log_out
-    flash[:notice] = "退会しました" #bootstrapのデザイン設定できていないかも?
+    flash[:info] = "退会しました" #bootstrapのデザイン設定できていないかも?
     redirect_to root_path
   end
 
