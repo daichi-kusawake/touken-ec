@@ -11,7 +11,7 @@ class User < ApplicationRecord
     validates :family_name_furigana, presence: true
     validates :last_name_furigana, presence: true
     validates :email_address, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-    validates :password, presence:true
+    validates :password, presence:true, allow_nil:true
 
     # 渡された文字列のハッシュ値を返す
     def User.digest(string)
