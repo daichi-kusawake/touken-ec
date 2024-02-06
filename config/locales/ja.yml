@@ -3,6 +3,7 @@ ja:
     models:
       product:
     attributes:
+      image: "サムネール"
       article:
         japanese_sword: "日本刀"
         tosogu: "刀装具"
@@ -109,9 +110,21 @@ ja:
         last_name_furigana: "名（フリガナ）"
         postal_code: "郵便番号"
         address: "住所"
+
   errors:
     messages:
       blank: "が入力されていません"
       invalid: "が無効です"
       confirmation: "がパスワードと一致しません"
       not_a_number: "は数値ではありません"
+      carrierwave_processing_error: 処理できませんでした
+      carrierwave_integrity_error: は許可されていないファイルタイプです
+      carrierwave_download_error: はダウンロードできません
+      extension_whitelist_error: "%{extension}ファイルのアップロードは許可されていません。アップロードできるファイルタイプ: %{allowed_types}"
+      extension_blacklist_error: "%{extension}ファイルのアップロードは許可されていません。アップロードできないファイルタイプ: %{prohibited_types}"
+      content_type_whitelist_error: "%{content_type}ファイルのアップロードは許可されていません。アップロードできるファイルタイプ: %{allowed_types}"
+      content_type_blacklist_error: "%{content_type}ファイルのアップロードは許可されていません"
+      rmagick_processing_error: "rmagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{e}"
+      mini_magick_processing_error: "MiniMagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{e}"
+      min_size_error: "を%{min_size}以上のサイズにしてください"
+      max_size_error: "を%{max_size}以下のサイズにしてください"

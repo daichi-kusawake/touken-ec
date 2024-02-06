@@ -45,11 +45,14 @@ gem "bootsnap", require: false
 
 gem 'mini_racer'
 gem 'bootstrap', '~> 5.3.0'
-gem 'mini_racer'
 
 gem 'jquery-rails'
 gem "sassc-rails"
 gem 'rails-controller-testing'
+
+#画像処理ライブラリ
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

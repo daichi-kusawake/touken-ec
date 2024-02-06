@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+
+  mount_uploader :image, ImageUploader
+
   #外部キーの設定[nilの許可]
   belongs_to :product_category, optional: true
 

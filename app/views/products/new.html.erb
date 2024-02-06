@@ -62,7 +62,20 @@
             <%= form.label :sales_status %>
             <%= form.select :sales_status, Product.enum_options_for_select(:sales_status), {prompt: "選択してください"}, class: "prefecture-select"%>
 
-            <%= form.submit%>
+            <div class="form-group mb-3">
+                <%= form.label :image %>
+                <%= form.file_field :image, class:'form-control js-file-select-preview', accept: 'image/*', data: { target: '#preview-target' } %>
+                <%= form.hidden_field :product_image_cache %>
+            </div>
+            <div class="form-group mt-3 mb-3">
+                <% if @product.image.present? %>
+                    <%= image_tag @product.image.url %>
+                <% else %>
+                    <%= image_tag '/assets/rails.png', id: 'preview-target'%>
+                <% end %>
+            </div>
+            <%= form.submit %>
+
         <% end %>
     </div>
 </div>
