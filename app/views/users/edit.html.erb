@@ -20,6 +20,12 @@
     <div>
         <%= user.text_field :password, autofocus: true, :placeholder =>"#{@user.password}" %>
     </div>
+    <div>
+        <%= user.text_field :postal_code, autofocus: true, :placeholder =>"#{@user.postal_code}" %>
+    </div>
+    <div>
+        <%= user.text_field :address, autofocus: true, :placeholder =>"#{@user.address}" %>
+    </div>
 
     <div><%= user.submit "更新する" %></div>
 <% end %>

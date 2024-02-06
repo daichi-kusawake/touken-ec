@@ -38,6 +38,13 @@
 
       <%= form.label :password_confirmation %>
       <%= form.password_field :password_confirmation, placeholder: "Please enter your password again"%>
+
+      <%= form.label :postal_code %>
+      <%= form.text_field :postal_code, placeholder: "000-0000"%>
+
+      <%= form.label :address %>
+      <%= form.text_field :address, placeholder: "東京都台東区浅草橋9-99-999-909"%>
+
       <%= form.submit%>
     <% end %>
   </div>

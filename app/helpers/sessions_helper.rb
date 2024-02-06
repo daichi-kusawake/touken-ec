@@ -1,6 +1,5 @@
 module SessionsHelper
 
-  #ページ遷移時
   def current_user
     #現在ログイン中のユーザーを返す
     if session[:user_id]
@@ -8,11 +7,16 @@ module SessionsHelper
     end
   end
 
+  def log_in(user)
+    session[:user_id] = user.id
+  end
+
   #ログイン状態確認
   def current_user?(user)
     #受け取ったユーザーがログイン中のユーザーと一致するか判定
     user == current_user
   end
+
 
   #顧客がログインしていればTRUE
   def logged_in?

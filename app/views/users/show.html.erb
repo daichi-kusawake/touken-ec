@@ -7,6 +7,9 @@
     <p class="text-lowercase"><%= @user.last_name_furigana%></p>
     <p class="text-lowercase"><%= @user.email_address%></p>
     <p class="text-lowercase"><%= @user.password%></p>
+    <p class="text-lowercase"><%= @user.postal_code%></p>
+    <p class="text-lowercase"><%= @user.email_address%></p>
     <%= link_to "編集", edit_user_path(@user) %>
+    <%= link_to "退会手続き", unsubscribe_user_path(@user) %>
     <%= link_to "削除", @user, data: {turbo_confirm: 'アカウント削除しますか？', turbo_method: :delete} %>
 </div>

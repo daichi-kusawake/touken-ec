@@ -38,7 +38,8 @@ class UsersController < ApplicationController
   def edit
     #編集
     @user = User.find(params[:id])
-    logged_in_current_user
+
+    redirect_to login_path unless current_user?(@user)
   end
 
   def update
@@ -49,17 +50,29 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    #削除機能
     user = User.find(params[:id])
     user.destroy
     redirect_to root_path
   end
 
+  def unsubscribe
+    @user = User.find(params[:id])
+  end
+
+  def withdraw
+    @user = User.find(params[:id])
+    @user.update_attribute(:account_status,false)
+    log_out
+    flash[:notice] = "退会しました" #bootstrapのデザイン設定できていないかも?
+    redirect_to root_path
+  end
+
+
   private
   def user_params
     #ストロングパラメータ
     params.require(:user).permit( :family_name,  :last_name,  :family_name_furigana,
-     :last_name_furigana,  :email_address,  :password, :password_confirmation)
+    :last_name_furigana,  :email_address,  :password, :password_confirmation, :postal_code, :address, :account_status)
   end
 
 end

@@ -11,19 +11,13 @@ class SessionsController < ApplicationController
       #ユーザー存在しない パスワード[TRUE or FALSE] == FALSE
       #有効なユーザー パスワード[FALSE] == FALSE
       #有効なユーザー パスワード[TRUE] == TRUE
-        log_in(user)
+        log_in user
         redirect_to user_path(user.id)
     else
       #フラッシュメッセージ
       flash.now[:danger] = 'ログイン失敗しました'
       render 'new',status: :unprocessable_entity
     end
-  end
-
-  #ログイン時
-  def log_in(user)
-    #送られたidを条件としてログインする
-    session[:user_id] = user.id
   end
 
   #ログアウト処理cookieに保存されているユーザー情報を削除

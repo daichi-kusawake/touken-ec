@@ -9,7 +9,7 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.string :password_digest,null: false
       t.string :postal_code, null: false
       t.string :address, null: false
-      t.boolean :account_status,null: false
+      t.boolean :account_status,null: false, default: 1 #アカウントステータスを1をデフォルトとして、退会済みの場合は0に変更する
       t.timestamps
     end
   end

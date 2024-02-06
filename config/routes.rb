@@ -9,10 +9,13 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  #usersのルーティング
-  resources :users
-
-  #Productsのルーティング
+  resources :users do
+    member do
+      #退会処理のルーティング
+      get 'unsubscribe'
+      patch 'withdraw'
+    end
+  end
   resources :products
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

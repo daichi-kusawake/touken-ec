@@ -112,7 +112,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_05_102704) do
     t.string "password_digest", null: false
     t.string "postal_code", null: false
     t.string "address", null: false
-    t.boolean "account_status", null: false
+    t.boolean "account_status", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
