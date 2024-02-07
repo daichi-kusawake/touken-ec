@@ -10,25 +10,25 @@
 ## windows
 ## Mac
 rbenvのインストール
-
-`brew install rbenv ruby-build`
-
+```
+$ brew install rbenv ruby-build
+```
 バージョン確認
-
-`rbenv -v`
-
+```
+$ rbenv -v
+```
 zshrcファイルでrbenvの初期化
-
-`echo 'export RBENV_ROOT="$HOME/.rbenv"' >> ~/.zshrc`
-
-`echo 'export PATH="$RBENV_ROOT/bin:$PATH"' >> ~/.zshrc`
-
-`echo 'eval "$(rbenv init -)"' >>  ~/.zshrc`
-
-`source ~/.zshrc`
+```
+$ echo 'export RBENV_ROOT="$HOME/.rbenv"' >> ~/.zshrc
+$ echo 'export PATH="$RBENV_ROOT/bin:$PATH"' >> ~/.zshrc
+$ echo 'eval "$(rbenv init -)"' >>  ~/.zshrc
+$ source ~/.zshrc
+```
 
 Railsのインストール
-`gem install rails`
+```
+$ gem install rails
+```
 Visual Studio Codeのインストール
 
 https://code.visualstudio.com/download
