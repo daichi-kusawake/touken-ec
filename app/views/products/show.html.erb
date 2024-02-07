@@ -4,7 +4,7 @@
 <div class="containar">
     <p class="text-lowercase"><%= @product.product_name%></p>
     <p class="text-lowercase"><%= @product.tax_excluded_price%></p>
-    <p class="text-lowercase"><%= @product.description%></p>
+    <p class="text-lowercase"><%= @product.content%></p>
     <p class="text-lowercase"><%= ProductCategory.find(@product.product_category_id).category_name%></p>
     <p class="text-lowercase"><%= @product.article%></p>
     <p class="text-lowercase"><%= @product.appraisal_document%></p>

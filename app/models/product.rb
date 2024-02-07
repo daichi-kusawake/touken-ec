@@ -117,7 +117,7 @@ class Product < ApplicationRecord
   #バリデーション設定
   validates :product_name,presence: true
   validates :tax_excluded_price,numericality: {only_integer: true}
-  validates :description,presence: true
+  validates :content,presence: true
   validates :product_category,presence: true
   validates :article,presence: true
   validates :appraisal_document,presence: true

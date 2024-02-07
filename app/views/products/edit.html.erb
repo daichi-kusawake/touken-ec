@@ -11,7 +11,7 @@
     </div>
 
     <div>
-        <%= product.text_field :description, autofocus: true, :placeholder =>"#{@product.description}" %>
+        <%= product.text_field :content, autofocus: true, placeholder: @product.content, class: "form-control"%>
     </div>
     <div>
         <%= product.select :article, Product.enum_options_for_select(:article), {prompt: @product.article}, class: "prefecture-select"%>

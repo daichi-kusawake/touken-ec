@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   get 'static_pages/home'
   get 'static_pages/help'
-  get 'staticpages/show'
-  get 'staticpages/index'
 
   #ルート設定
   root to:'users#index'
@@ -20,7 +18,7 @@ Rails.application.routes.draw do
       patch 'withdraw'
     end
   end
-  
+
   resources :products
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
