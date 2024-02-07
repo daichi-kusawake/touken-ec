@@ -1,21 +1,22 @@
 Rails.application.routes.draw do
 
-  #トップページ
-  root to:'customers#index'
+  #ルート設定
+  root to:'users#index'
 
 
-  #サインページ
-  get 'signup',to:'signup#new'
-  post 'signup',to:'signup#create'
+  #ログイン/ログアウト機能
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
 
-  #customerのルーティング
-  resources :customers
-
-  #個人情報
-  #get 'customers/:id',to:'customers#show',as: 'customer'
-
-  #顧客一覧
-  #get 'customers',to:"customers#index"
+  resources :users do
+    member do
+      #退会処理のルーティング
+      get 'unsubscribe'
+      patch 'withdraw'
+    end
+  end
+  resources :products
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -25,12 +26,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index
-
-  #ユーザー登録
-
-  #get 'help' =>'staic_pages#home'
-  #get 'about' =>'static_pages#help'
-  #get 'contact' => 'static_pages#contact'
-  #get 'signup' => 'customers#new'
 
 end

@@ -1,2 +1,0 @@
-class Sign < ApplicationRecord
-end

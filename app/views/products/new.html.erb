@@ -1,0 +1,82 @@
+<% provide(:title,'Product registration')%>
+<h1>Product registration</h1>
+
+<div class= "container">
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_with model: @product, url: products_path do |form| %>
+            <!--エラー出力-->
+            <% if form.object.errors.any? %>
+                <div id="error_explanation">
+                    <div class="alert alert-danger">
+                        <%= pluralize(@product.errors.count, "error") %>
+                        <ul>
+                            <% form.object.errors.full_messages.each do |message|  %>
+                            <li><%= message %></li>
+                            <% end  %>
+                        </ul>
+                    </div>
+                </div>
+            <% end %>
+            <!--入力フォーム-->
+            <%= form.label :product_name %>
+            <%= form.text_field :product_name, placeholder: "商品名" %>
+
+            <%= form.label :tax_excluded_price%>
+            <%= form.number_field :tax_excluded_price,placeholder: "税抜き価格" %>
+
+            <%= form.label :description %>
+            <%= form.text_field :description, placeholder: "商品説明"%>
+
+
+            <!--品物カテゴリ-->
+            <!--大項目-->
+            <%= form.label :article %>
+            <%= form.select :article, Product.enum_options_for_select(:article), {prompt: "選択してください"}, class: "prefecture-select"%>
+
+            <!--中項目-->
+            <%= form.label :category_name %>
+            <%= form.collection_select(:product_category_id,ProductCategory.all,:id,:category_name,{prompt: "選択してください"},class:"prefecture-select")%>
+
+
+            <!--鑑定書-->
+            <%= form.label :appraisal_document %>
+            <%= form.select :appraisal_document, Product.enum_options_for_select(:appraisal_document), {prompt: "選択してください"}, class: "prefecture-select"%>
+
+            <!--国-->
+            <%= form.label :country %>
+            <%= form.select :country, Product.enum_options_for_select(:country), {prompt: "選択してください"}, class: "prefecture-select"%>
+
+            <!--時代-->
+            <%= form.label :era %>
+            <%= form.select :era, Product.enum_options_for_select(:era), {prompt: "選択してください"}, class: "prefecture-select"%>
+
+            <!--年号-->
+            <%= form.label :era_name %>
+            <%= form.select :era_name, Product.enum_options_for_select(:era_name), {prompt: "選択してください"}, class: "prefecture-select"%>
+
+            <!--銘-->
+            <%= form.label :sign %>
+            <%= form.select :sign, Product.enum_options_for_select(:sign), {prompt: "選択してください"}, class: "prefecture-select"%>
+
+            <!--販売ステータス-->
+            <%= form.label :sales_status %>
+            <%= form.select :sales_status, Product.enum_options_for_select(:sales_status), {prompt: "選択してください"}, class: "prefecture-select"%>
+
+            <div class="form-group mb-3">
+                <%= form.label :image %>
+                <%= form.file_field :image, class:'form-control js-file-select-preview', accept: 'image/*', data: { target: '#preview-target' } %>
+                <%= form.hidden_field :product_image_cache %>
+            </div>
+            <div class="form-group mt-3 mb-3">
+                <% if @product.image.present? %>
+                    <%= image_tag @product.image.url %>
+                <% else %>
+                    <%= image_tag '/assets/rails.png', id: 'preview-target'%>
+                <% end %>
+            </div>
+            <%= form.submit %>
+
+        <% end %>
+    </div>
+</div>
+

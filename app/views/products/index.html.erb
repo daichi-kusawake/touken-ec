@@ -1,0 +1,43 @@
+<% provide(:title,'Products List')%>
+<h1>Products List</h1>
+
+<table class="table">
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">商品名</th>
+        <th scope="col">価格（消費税抜き）</th>
+        <th scope="col">商品説明</th>
+        <th scope="col">商品カテゴリID </th>
+        <th scope="col">区分</th>
+        <th scope="col">鑑定書</th>
+        <th scope="col">国</th>
+        <th scope="col">時代</th>
+        <th scope="col">年号</th>
+        <th scope="col">銘</th>
+        <th scope="col">販売ステータス</th>
+        <th scope="col">商品画像</th>
+        <th scope="col">作成日</th>
+        <th scope="col">更新日</th>
+    </tr>
+    <% @products.each do |product| %>
+        <tr>
+            <td scope="row"><%= product.id %></td>
+            <td scope="row"><%= product.product_name %></td>
+            <td scope="row"><%= product.tax_excluded_price %></td>
+            <td scope="row"><%= product.description %></td>
+            <td scope="row"><%= product.product_category_id %></td>
+            <td scope="row"><%= product.human_attribute_enum(:article) %></td>
+            <td scope="row"><%= product.human_attribute_enum(:appraisal_document) %></td>
+            <td scope="row"><%= product.human_attribute_enum(:country) %></td>
+            <td scope="row"><%= product.human_attribute_enum(:era) %></td>
+            <td scope="row"><%= product.human_attribute_enum(:era_name) %></td>
+            <td scope="row"><%= product.human_attribute_enum(:sign) %></td>
+            <td scope="row"><%= product.human_attribute_enum(:sales_status) %></td>
+            <td scope="row">
+                <%= image_tag product.image.thumb.url, class:'card-img-top object-fit-cover' %>
+            </td>
+            <td scope="row"><%= product.created_at %></td>
+            <td scope="row"><%= product.updated_at %></td>
+        </tr>
+    <%end%>
+</table>

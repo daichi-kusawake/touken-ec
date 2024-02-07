@@ -1,7 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  customer: one
+  user: one
+  delivery_destination: one
+  product: one
   addressee: MyString
   delivery_postal_code: MyString
   delivery_address: MyString
@@ -11,7 +13,9 @@ one:
   order_status: 1
 
 two:
-  customer: two
+  user: two
+  delivery_destination: two
+  product: two
   addressee: MyString
   delivery_postal_code: MyString
   delivery_address: MyString
