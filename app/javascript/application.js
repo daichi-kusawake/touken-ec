@@ -3,5 +3,8 @@
 //= require popper
 //= require bootstrap
 import "@hotwired/turbo-rails"
+
+//↓必要ないかも
+//import "preview"
+
 import "controllers"
-import "preview"

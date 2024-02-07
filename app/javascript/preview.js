@@ -1,3 +1,4 @@
+//↓必要ないかも
 document.addEventListener('DOMContentLoaded', () => {
     const elements = document.querySelectorAll('.js-file-select-preview')
     if (!elements) return

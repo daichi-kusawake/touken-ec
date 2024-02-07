@@ -11,6 +11,8 @@ class User < ApplicationRecord
     validates :last_name_furigana, presence: true
     validates :email_address, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :password, presence:true, allow_nil:true #has_secure_passwordでバリデーションをしているため、ここではnilを許容する
+    validates :postal_code, presence: true
+    validates :address, presence: true
 
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost

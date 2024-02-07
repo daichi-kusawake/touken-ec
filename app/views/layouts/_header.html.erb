@@ -1,6 +1,6 @@
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <%= link_to "TOUKEN", '#', id: "logo" %>
+         <%= link_to image_tag("edoz-logo.svg", alt: "edoz-logo", width: "150"),root_path %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "HOME",users_path %></li>
@@ -16,4 +16,5 @@
       <% else %>
         <%= render 'users/not_logged_in' %>
       <% end %>
+      
     </header>
