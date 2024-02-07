@@ -8,3 +8,5 @@ import "@hotwired/turbo-rails"
 //import "preview"
 
 import "controllers"
+import "trix"
+import "@rails/actiontext"

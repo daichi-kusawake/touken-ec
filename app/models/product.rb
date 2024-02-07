@@ -5,6 +5,9 @@ class Product < ApplicationRecord
   #外部キーの設定[nilの許可]
   belongs_to :product_category, optional: true
 
+  has_rich_text :content
+
+
   #enum設定 1:刀 2:刀装具 3:甲冑
   enum article: {japanese_sword: 0,tosogu: 1,kattyu: 2}
 

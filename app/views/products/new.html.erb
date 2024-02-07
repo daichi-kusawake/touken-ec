@@ -25,9 +25,10 @@
             <%= form.number_field :tax_excluded_price,placeholder: "税抜き価格" %>
 
             <%= form.label :description %>
-            <%= form.text_field :description, placeholder: "商品説明"%>
-
-
+            <%= form.text_field :description, placeholder: "商品説明"%>  
+            <%= form.label :content %>
+            <%= form.rich_text_area :content %>
+  
             <!--品物カテゴリ-->
             <!--大項目-->
             <%= form.label :article %>
