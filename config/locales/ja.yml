@@ -129,3 +129,4 @@ ja:
       min_size_error: "を%{min_size}以上のサイズにしてください"
       max_size_error: "を%{max_size}以下のサイズにしてください"
       taken: "はすでに使用されています"
+      processing_error: "処理中にエラーが発生しました"

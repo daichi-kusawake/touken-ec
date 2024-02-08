@@ -14,7 +14,7 @@ one:
 
 two:
   product_name: MyString
-  tax_excluded_price: 2
+  tax_excluded_price: 2 
   product_category: two
   article: 2
   appraisal_document: 2

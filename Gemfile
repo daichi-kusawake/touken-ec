@@ -50,6 +50,10 @@ gem 'jquery-rails'
 gem "sassc-rails"
 gem 'rails-controller-testing'
 
+gem "font-awesome-sass"
+
+
+
 #画像処理ライブラリ
 gem 'carrierwave'
 gem 'mini_magick'
