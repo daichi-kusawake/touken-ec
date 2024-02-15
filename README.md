@@ -37,9 +37,7 @@ https://code.visualstudio.com/download
 ```mermaid
 erDiagram
 users ||--o{orders:""
-users ||--o{delivery_destinations:""
 
-delivery_destinations ||--o{orders:""
 
 products ||--o{orders:""
 products ||--||japanese_swords:""
@@ -69,20 +67,11 @@ users{
 orders{
     integer id PK
     references user_id FK
-    references delivery_destination_id FK
     references product_id FK
     string payment_methods
     integer billing_amount
     integer shipping_fee
     enum order_status
-}
-
-delivery_destinations{
-    integer id PK
-    references user_id FK
-    string addressee
-    string delivery_postal_code
-    string delivery_address
 }
 
 products{
