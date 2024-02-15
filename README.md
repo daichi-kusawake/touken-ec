@@ -127,8 +127,10 @@ kattyu{
 ```
 
 ▼draw.io
+![ec drawio](https://github.com/daichi-kusawake/touken-ec/assets/77773862/c91e6401-e82c-4d24-b99e-229250e96dfd)
 
-![ec drawio](https://github.com/daichi-kusawake/touken-ec/assets/77773862/fa1d7416-5923-4fbf-b5d1-7b0c9616c6a6)
+
+
 
 ## ブランチ変更
 
