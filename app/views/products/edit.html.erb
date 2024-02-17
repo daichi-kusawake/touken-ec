@@ -1,0 +1,44 @@
+<% provide(:title,'Edit')%>
+<h1>Edit</h1>
+
+<%= form_for(@product, url: product_path(@product)) do |product| %>
+    <div>
+        <%= product.text_field :product_name, autofocus: true, :placeholder =>"#{@product.product_name}" %>
+    </div>
+
+    <div>
+        <%= product.text_field :tax_excluded_price, autofocus: true, :placeholder =>"#{@product.tax_excluded_price}" %>
+    </div>
+
+    <div>
+        <%= product.text_field :content, autofocus: true, placeholder: @product.content, class: "form-control"%>
+    </div>
+    <div>
+        <%= product.select :article, Product.enum_options_for_select(:article), {prompt: @product.article}, class: "prefecture-select"%>
+    </div>
+    <div>
+        <%= product.collection_select(:product_category_id,ProductCategory.all,:id,:category_name,class:"prefecture-select")%>
+    </div>
+    <div>
+        <%= product.select :appraisal_document, Product.enum_options_for_select(:appraisal_document), {prompt: @product.appraisal_document}, class: "prefecture-select"%>
+    </div>
+
+    <div>
+        <%= product.select :country, Product.enum_options_for_select(:country), {prompt: @product.country}, class: "prefecture-select"%>
+    </div>
+    <div>
+        <%= product.select :era, Product.enum_options_for_select(:era), {prompt: @product.era}, class: "prefecture-select"%>
+    </div>
+    <div>
+        <%= product.select :era_name, Product.enum_options_for_select(:era_name), {prompt: @product.era_name}, class: "prefecture-select"%>
+    </div>
+    <div>
+        <%= product.select :sign, Product.enum_options_for_select(:sign), {prompt: @product.sign}, class: "prefecture-select"%>
+    </div>
+    <div>
+        <%= product.select :sales_status, Product.enum_options_for_select(:sales_status),class: "prefecture-select"%>
+    </div>
+    <div>
+        <%= product.submit "更新する" %>
+    </div>
+<% end %>

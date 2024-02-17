@@ -1,0 +1,18 @@
+<% provide(:title,'Product Details')%>
+<h1>Product Details</h1>
+<!--管理者が編集する用の商品詳細画面-->
+<div class="containar">
+    <p class="text-lowercase"><%= @product.product_name%></p>
+    <p class="text-lowercase"><%= @product.tax_excluded_price%></p>
+    <p class="text-lowercase"><%= @product.content%></p>
+    <p class="text-lowercase"><%= ProductCategory.find(@product.product_category_id).category_name%></p>
+    <p class="text-lowercase"><%= @product.article%></p>
+    <p class="text-lowercase"><%= @product.appraisal_document%></p>
+    <p class="text-lowercase"><%= @product.country%></p>
+    <p class="text-lowercase"><%= @product.era%></p>
+    <p class="text-lowercase"><%= @product.era_name%></p>
+    <p class="text-lowercase"><%= @product.sign%></p>
+    <p class="text-lowercase"><%= @product.sales_status%></p>
+    <%= link_to "編集", edit_product_path(@product) %>
+    <%= link_to "削除", @product, data: {turbo_confirm: '商品削除しますか？', turbo_method: :delete} %>
+</div>

@@ -10,69 +10,63 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_17_083130) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_07_091417) do
+  create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.string "service_name", null: false
+    t.bigint "byte_size", null: false
+    t.string "checksum"
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "active_storage_variant_records", force: :cascade do |t|
+    t.bigint "blob_id", null: false
+    t.string "variation_digest", null: false
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
   create_table "administrators", force: :cascade do |t|
     t.string "email_address"
-    t.string "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "appraisal_documents", force: :cascade do |t|
-    t.string "appraisal_document_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "article_categories", force: :cascade do |t|
-    t.string "article_category_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "countries", force: :cascade do |t|
-    t.string "country_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "customers", force: :cascade do |t|
-    t.string "family_name", null: false
-    t.string "last_name", null: false
-    t.string "family_name_furigana", null: false
-    t.string "last_name_furigana", null: false
-    t.string "email_address", null: false
-    t.string "password"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "delivery_destinations", force: :cascade do |t|
-    t.integer "customer_id", null: false
+    t.integer "user_id", null: false
     t.string "addressee"
     t.string "delivery_postal_code"
     t.string "delivery_address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["customer_id"], name: "index_delivery_destinations_on_customer_id"
-  end
-
-  create_table "eras", force: :cascade do |t|
-    t.string "era"
-    t.string "era_name"
-    t.date "ad"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "japanese_sword_categories", force: :cascade do |t|
-    t.string "japanese_sword_category_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_delivery_destinations_on_user_id"
   end
 
   create_table "japanese_swords", force: :cascade do |t|
-    t.integer "japanese_sword_category_id", null: false
     t.float "blade_length"
     t.float "curvature"
     t.float "width_at_the_hamachi"
@@ -85,27 +79,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_083130) do
     t.integer "guns_sword_registration_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["japanese_sword_category_id"], name: "index_japanese_swords_on_japanese_sword_category_id"
-  end
-
-  create_table "kattyu_categories", force: :cascade do |t|
-    t.string "kattyu_category_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "kattyus", force: :cascade do |t|
-    t.integer "kattyu_category_id", null: false
     t.string "odoshiito"
     t.string "hachi"
     t.boolean "kabutodai"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["kattyu_category_id"], name: "index_kattyus_on_kattyu_category_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "customer_id", null: false
+    t.integer "user_id", null: false
+    t.integer "delivery_destination_id", null: false
+    t.integer "product_id", null: false
     t.string "addressee"
     t.string "delivery_postal_code"
     t.string "delivery_address"
@@ -115,56 +102,35 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_083130) do
     t.integer "order_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["customer_id"], name: "index_orders_on_customer_id"
+    t.index ["delivery_destination_id"], name: "index_orders_on_delivery_destination_id"
+    t.index ["product_id"], name: "index_orders_on_product_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "product_orders", force: :cascade do |t|
-    t.integer "product_id", null: false
-    t.integer "order_id", null: false
-    t.string "tax_included_price"
-    t.integer "order_status"
+  create_table "product_categories", force: :cascade do |t|
+    t.string "category_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_product_orders_on_order_id"
-    t.index ["product_id"], name: "index_product_orders_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
+    t.integer "product_category_id", null: false
     t.string "product_name"
     t.integer "tax_excluded_price"
-    t.string "description"
-    t.integer "article_category_id", null: false
-    t.integer "article_id"
-    t.integer "appraisal_document_id", null: false
-    t.integer "country_id", null: false
-    t.integer "era_id", null: false
-    t.integer "sign_id", null: false
-    t.integer "japanese_sword_id", null: false
+    t.integer "article"
+    t.integer "appraisal_document"
+    t.integer "country"
+    t.integer "era"
+    t.integer "era_name"
+    t.integer "sign"
     t.integer "sales_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["appraisal_document_id"], name: "index_products_on_appraisal_document_id"
-    t.index ["article_category_id"], name: "index_products_on_article_category_id"
-    t.index ["country_id"], name: "index_products_on_country_id"
-    t.index ["era_id"], name: "index_products_on_era_id"
-    t.index ["japanese_sword_id"], name: "index_products_on_japanese_sword_id"
-    t.index ["sign_id"], name: "index_products_on_sign_id"
-  end
-
-  create_table "signs", force: :cascade do |t|
-    t.string "sign_person"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tosogu_categories", force: :cascade do |t|
-    t.string "tosogu_category_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "image"
+    t.index ["product_category_id"], name: "index_products_on_product_category_id"
   end
 
   create_table "tosogus", force: :cascade do |t|
-    t.integer "tosogu_category_id", null: false
     t.string "shape"
     t.boolean "in_paulownia_wood_box"
     t.float "length"
@@ -173,20 +139,27 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_083130) do
     t.float "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["tosogu_category_id"], name: "index_tosogus_on_tosogu_category_id"
   end
 
-  add_foreign_key "delivery_destinations", "customers"
-  add_foreign_key "japanese_swords", "japanese_sword_categories"
-  add_foreign_key "kattyus", "kattyu_categories"
-  add_foreign_key "orders", "customers"
-  add_foreign_key "product_orders", "orders"
-  add_foreign_key "product_orders", "products"
-  add_foreign_key "products", "appraisal_documents"
-  add_foreign_key "products", "article_categories"
-  add_foreign_key "products", "countries"
-  add_foreign_key "products", "eras"
-  add_foreign_key "products", "japanese_swords"
-  add_foreign_key "products", "signs"
-  add_foreign_key "tosogus", "tosogu_categories"
+  create_table "users", force: :cascade do |t|
+    t.string "family_name", null: false
+    t.string "last_name", null: false
+    t.string "family_name_furigana", null: false
+    t.string "last_name_furigana", null: false
+    t.string "email_address", null: false
+    t.string "password_digest", null: false
+    t.string "postal_code", null: false
+    t.string "address", null: false
+    t.boolean "account_status", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "delivery_destinations", "users"
+  add_foreign_key "orders", "delivery_destinations"
+  add_foreign_key "orders", "products"
+  add_foreign_key "orders", "users"
+  add_foreign_key "products", "product_categories"
 end

@@ -1,7 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  japanese_sword_category: one
   blade_length: 1.5
   curvature: 1.5
   width_at_the_hamachi: 1.5
@@ -14,7 +13,6 @@ one:
   guns_sword_registration_number: 1
 
 two:
-  japanese_sword_category: two
   blade_length: 1.5
   curvature: 1.5
   width_at_the_hamachi: 1.5
