@@ -1,7 +1,6 @@
 class CreateJapaneseSwords < ActiveRecord::Migration[7.1]
   def change
     create_table :japanese_swords do |t|
-      t.references :japanese_sword_category, null: false, foreign_key: true
       t.float :blade_length
       t.float :curvature
       t.float :width_at_the_hamachi

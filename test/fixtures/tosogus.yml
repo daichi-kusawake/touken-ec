@@ -1,7 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  tosogu_category: one
   shape: MyString
   in_paulownia_wood_box: false
   length: 1.5
@@ -10,7 +9,6 @@ one:
   weight: 1.5
 
 two:
-  tosogu_category: two
   shape: MyString
   in_paulownia_wood_box: false
   length: 1.5

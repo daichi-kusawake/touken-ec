@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TOUKEN</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag 'application', media: 'all','data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= javascript_importmap_tags %>
     <%= csrf_meta_tags %>
-    <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-    <![endif]-->
+    <%= render 'layouts/shim' %>
 
   </head>
   <body>
-    <header>
-      <div>
-        <nav>
-          <ul>
-            <li><%= link_to "HOME",'customers' %></li>
-            <li><%= link_to "Signup",'customers/new' %></li>
-            <li><%= link_to "Login",'customers/new' %></li>
-          </ul>
-        </nav>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>">
+      <!--アラートメッセージの種類 https://getbootstrap.jp/docs/4.2/components/alerts/-->
+        <%= message %>
       </div>
-    </header>
-    <div>
+      <% end %>
       <%= yield %>
+      <%= render 'layouts/footer' %>
     </div>
   </body>
 </html>

@@ -1,7 +1,0 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  appraisal_document_name: MyString
-
-two:
-  appraisal_document_name: MyString
