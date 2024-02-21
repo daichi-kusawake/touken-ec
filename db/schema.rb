@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_17_083130) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_24_145026) do
   create_table "administrators", force: :cascade do |t|
     t.string "email_address"
-    t.string "password"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,7 +42,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_083130) do
     t.string "family_name_furigana", null: false
     t.string "last_name_furigana", null: false
     t.string "email_address", null: false
-    t.string "password"
+    t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

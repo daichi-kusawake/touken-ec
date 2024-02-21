@@ -1,5 +1,7 @@
 class CustomersController < ApplicationController
 
+  #アクション実行前にログインしているか判定
+  before_action :logged_in_customer,only:[:edit,:show,:destroy]
   def index
     #顧客一覧
     @customers = Customer.all
@@ -10,7 +12,7 @@ class CustomersController < ApplicationController
 
     #送られたidを条件にしてmodelから検索する
     @customer = Customer.find(params[:id])
-
+    logged_in_current_customer
   end
 
   #新規登録用：Customerのインスタンスを作成
@@ -24,7 +26,8 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
 
     if @customer.save
-        redirect_to root_path
+      log_in @customer
+      redirect_to root_path
     else
         #turboの場合にバリデーション失敗のエラー表示ができない為、Unprocessable Entityを返すよう指定
         render 'new', status: :unprocessable_entity
@@ -34,6 +37,7 @@ class CustomersController < ApplicationController
   def edit
     #編集
     @customer = Customer.find(params[:id])
+    logged_in_current_customer
   end
 
   def update
@@ -52,7 +56,9 @@ class CustomersController < ApplicationController
 
   private
   def customer_params
-    params.require(:customer).permit(:family_name,:last_name,:family_name_furigana,:last_name_furigana,:email_address,:password)
+    #ストロングパラメータ
+    params.require(:customer).permit( :family_name,  :last_name,  :family_name_furigana,
+     :last_name_furigana,  :email_address,  :password, :password_confirmation)
   end
 
 end
