@@ -1,27 +1,32 @@
 module SessionsHelper
 
-  #ページ遷移時
-  def current_customer
+  def current_user
     #現在ログイン中のユーザーを返す
-    if session[:customer_id]
-      @current_customer ||= Customer.find_by(id: session[:customer_id])
+    if session[:user_id]
+      @current_user ||= User.find_by(id: session[:user_id])
     end
   end
 
-  #ログイン状態確認
-  def current_customer?(customer)
-    #受け取ったユーザーがログイン中のユーザーと一致するか判定
-    customer == current_customer
+  def log_in(user)
+    session[:user_id] = user.id
   end
+
+  #ログイン状態確認
+  def current_user?(user)
+    #受け取ったユーザーがログイン中のユーザーと一致するか判定
+    user == current_user
+  end
+
 
   #顧客がログインしていればTRUE
   def logged_in?
-    !current_customer.nil?
+    !current_user.nil?
   end
 
   #cookieの削除
   def log_out
-    session.delete(:customer_id)
-    @current_customer = nil
+    session.delete(:user_id)
+    @current_user = nil
   end
+
 end

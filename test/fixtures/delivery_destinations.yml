@@ -1,14 +1,14 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  customer: one
+  user: one
   addressee: MyString
   delivery_postal_code: MyString
   delivery_address: MyString
 
 
 two:
-  customer: two
+  user: two
   addressee: MyString
   delivery_postal_code: MyString
   delivery_address: MyString

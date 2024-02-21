@@ -44,12 +44,11 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 
 gem 'mini_racer'
-
 gem 'bootstrap', '~> 5.3.0'
+gem 'mini_racer'
 
 gem 'jquery-rails'
-gem "sassc-rails" 
-
+gem "sassc-rails"
 gem 'rails-controller-testing'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

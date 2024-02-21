@@ -1,0 +1,31 @@
+<% provide(:title,'Edit')%>
+<h1>Edit</h1>
+
+<%= form_for(@user, url: user_path(@user)) do |user| %>
+    <div>
+        <%= user.text_field :family_name, autofocus: true, :placeholder =>"#{@user.family_name}" %>
+    </div>
+    <div>
+        <%= user.text_field :last_name, autofocus: true, :placeholder =>"#{@user.last_name}" %>
+    </div>
+    <div>
+        <%= user.text_field :family_name_furigana, autofocus: true, :placeholder =>"#{@user.family_name_furigana}" %>
+    </div>
+    <div>
+        <%= user.text_field :last_name_furigana, autofocus: true, :placeholder =>"#{@user.last_name_furigana}" %>
+    </div>
+    <div>
+        <%= user.text_field :email_address, autofocus: true, :placeholder =>"#{@user.email_address}" %>
+    </div>
+    <div>
+        <%= user.text_field :password, autofocus: true, :placeholder =>"#{@user.password}" %>
+    </div>
+    <div>
+        <%= user.text_field :postal_code, autofocus: true, :placeholder =>"#{@user.postal_code}" %>
+    </div>
+    <div>
+        <%= user.text_field :address, autofocus: true, :placeholder =>"#{@user.address}" %>
+    </div>
+
+    <div><%= user.submit "更新する" %></div>
+<% end %>
