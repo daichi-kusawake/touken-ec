@@ -3,7 +3,7 @@ ja:
     models:
       product:
     attributes:
-      image: "サムネール"
+      images: "商品画像"
       article:
         japanese_sword: "日本刀"
         tosogu: "刀装具"
@@ -117,9 +117,6 @@ ja:
       invalid: "が無効です"
       confirmation: "がパスワードと一致しません"
       not_a_number: "は数値ではありません"
-      carrierwave_processing_error: 処理できませんでした
-      carrierwave_integrity_error: は許可されていないファイルタイプです
-      carrierwave_download_error: はダウンロードできません
       extension_whitelist_error: "%{extension}ファイルのアップロードは許可されていません。アップロードできるファイルタイプ: %{allowed_types}"
       extension_blacklist_error: "%{extension}ファイルのアップロードは許可されていません。アップロードできないファイルタイプ: %{prohibited_types}"
       content_type_whitelist_error: "%{content_type}ファイルのアップロードは許可されていません。アップロードできるファイルタイプ: %{allowed_types}"

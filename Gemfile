@@ -52,10 +52,10 @@ gem 'rails-controller-testing'
 
 gem "font-awesome-sass"
 
+#バリデーション設定の導入
+gem 'activestorage-validator'
 
 
-#画像処理ライブラリ
-gem 'carrierwave'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"

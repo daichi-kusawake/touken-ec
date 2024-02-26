@@ -61,6 +61,7 @@ class ProductsController < ApplicationController
   def product_params
     #ストロングパラメータ
     params.require(:product).permit(:product_name,:tax_excluded_price,:description,
-    :product_category_id,:article,:appraisal_document, :country,:era, :era_name, :sign, :sales_status , :image, :image_cache,:content,images: [])
+    :product_category_id,:article,:appraisal_document, :country,:era,
+    :era_name, :sign, :sales_status, :content,images: [])
   end
 end
