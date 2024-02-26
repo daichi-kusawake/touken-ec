@@ -7,7 +7,6 @@
     - Ubuntu 22.04.3LTS
 
 # 導入手順
-## windows
 ## Mac
 rbenvのインストール
 ```
