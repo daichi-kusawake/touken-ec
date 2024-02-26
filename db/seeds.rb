@@ -23,6 +23,7 @@
   )
 end
 
+
 ProductCategory.create(
   category_name:"日本刀"
 )

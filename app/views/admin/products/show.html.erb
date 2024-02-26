@@ -20,6 +20,6 @@
         <% end %>
     <% end %>
 
-    <%= link_to "編集", edit_product_path(@product) %>
+    <%= link_to "編集", edit_admin_product_path(@product) %>
     <%= link_to "削除", @product, data: {turbo_confirm: '商品削除しますか？', turbo_method: :delete} %>
 </div>

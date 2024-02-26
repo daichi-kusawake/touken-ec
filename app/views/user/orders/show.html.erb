@@ -1,0 +1,39 @@
+<div class="container p-3">
+    <h3>注文履歴詳細</h3>
+
+    <h4>注文情報</h4>
+    <table class="table">
+      <tr>
+        <td>注文日</td>
+        <td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
+      </tr>
+      <tr>
+        <td>配送先</td>
+        <td>〒<%= @order.delivery_postal_code + "　" + @order.delivery_address + "　" + @order.addressee %></td>
+      </tr>
+      <tr>
+        <td>支払い方法</td>
+        <td><%= @order.payment_methods %></td>
+      </tr>
+      <tr>
+        <td>ステータス</td>
+        <td><%= @order.order_status %></td>
+      </tr>
+    </table>
+
+    <h4>請求情報</h4>
+    <table class="table">
+      <tr>
+        <td>商品価格</td>
+        <td><%= (Product.find(@order.product_id).tax_excluded_price * Constants::SALES_TAX_RATE).floor %></td>
+      </tr>
+      <tr>
+        <td>配送料</td>
+        <td><%= @order.shipping_fee %></td>
+      </tr>
+      <tr>
+        <td>ご請求額</td>
+        <td><%= @order.billing_amount %></td>
+      </tr>
+    </table>
+</div>

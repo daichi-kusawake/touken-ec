@@ -1,12 +1,12 @@
 class Product < ApplicationRecord
   #複数ファイルを保持するため、imagesで宣言
   has_many_attached :images
+  attr_accessor :my_images
 
   #外部キーの設定[nilの許可]
   belongs_to :product_category, optional: true
+  has_many :orders
   has_rich_text :content
-
-  attr_accessor :my_images
 
   #enum設定 1:刀 2:刀装具 3:甲冑
   enum article: {japanese_sword: 0,tosogu: 1,kattyu: 2}
@@ -127,4 +127,7 @@ class Product < ApplicationRecord
   validates :sign,presence: true
   validates :sales_status,presence: true
   validates :images,presence:true,blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg']}
+  scope :price_high_to_low, -> { order(tax_excluded_price: :desc) }
+  scope :price_low_to_high, -> { order(tax_excluded_price: :asc) }
+
 end

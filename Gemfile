@@ -51,7 +51,7 @@ gem "sassc-rails"
 gem 'rails-controller-testing'
 
 gem "font-awesome-sass"
-
+gem 'kaminari'
 #バリデーション設定の導入
 gem 'activestorage-validator'
 

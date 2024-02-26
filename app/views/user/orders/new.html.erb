@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>注文情報入力</h1>
+    <%= image_tag @product.image.url, class: "aspect-square w-full rounded-xl object-cover" %>
+    
+    <%= form_with url: confirm_orders_path do |f|  %>
+        <h4>支払い方法</h4>
+        <div class="col-sm-2 btn-group" data-toggle="buttons">
+            <%= f.select :payment_methods, Order.enum_options_for_select(:payment_methods), class: "prefecture-select"%>
+        </div>
+        <div>
+        <h4>お届け先</h4>
+            <%= f.label :address_type, "ご自身の住所" %>
+            〒<%= current_user.postal_code + " " + current_user.address + " " + current_user.family_name + current_user.last_name %>
+            <%= f.radio_button :address_type,0, checked: true %>
+            <%= f.label :address_type, "新しいお届け先" %>
+            <%= f.radio_button :address_type,1 %>
+        </div>
+
+
+        <table>
+            <tr>    
+                <td>郵便番号(ハイフンなし)</td>
+                <td><%= f.text_field :new_post_code %></td>
+            </tr>
+            <tr>
+                <td>住所</td>
+                <td><%= f.text_field :new_address %></td>
+            </tr>
+            <tr>
+                <td>宛名</td>
+                <td><%= f.text_field :new_name %></td>
+            </tr>
+        </table>
+
+        <br>
+        <%= hidden_field_tag :product_id, @product.id %>
+        <%= f.submit "確認画面へ進む", class: "btn btn-info" %>
+    <% end %>
+</div>

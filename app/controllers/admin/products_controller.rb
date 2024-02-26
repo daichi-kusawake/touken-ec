@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class Admin::ProductsController < ApplicationController
   def new
     @product = Product.new
   end
@@ -53,7 +53,7 @@ class ProductsController < ApplicationController
     if product.update(product_params)
       product.images.attach(params[:product][:my_images])
       flash[:success] = "更新しました"
-      redirect_to product_path(product.id)
+      redirect_to admin_product_path(product.id)
     end
   end
 

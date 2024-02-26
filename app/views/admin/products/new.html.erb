@@ -27,7 +27,7 @@
 
             <%= form.label :content%>
             <%= form.rich_text_area :content, placeholder: "商品説明" ,class: "form-control"%>
-  
+
             <!--品物カテゴリ-->
             <!--大項目-->
             <%= form.label :article %>
@@ -68,7 +68,6 @@
                 <%= form.file_field :images, multiple: true, class:'form-control js-file-select-preview' %>
             </div>
             
-
             <%= form.submit %>
         <% end %>
     </div>
