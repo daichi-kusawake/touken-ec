@@ -34,7 +34,9 @@
             <td scope="row"><%= product.human_attribute_enum(:sign) %></td>
             <td scope="row"><%= product.human_attribute_enum(:sales_status) %></td>
             <td scope="row">
-                <%= image_tag product.image.thumb.url, class:'card-img-top object-fit-cover' %>
+                <% product.images.each do |image| %>
+                    <%= image_tag(image, width:100) %>
+                 <% end %>
             </td>
             <td scope="row"><%= product.created_at %></td>
             <td scope="row"><%= product.updated_at %></td>
