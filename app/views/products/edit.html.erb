@@ -1,44 +1,68 @@
 <% provide(:title,'Edit')%>
 <h1>Edit</h1>
 
-<%= form_for(@product, url: product_path(@product)) do |product| %>
+<%= form_with model: @product, url: product_path(@product) do |form| %>
     <div>
-        <%= product.text_field :product_name, autofocus: true, :placeholder =>"#{@product.product_name}" %>
+        <%= form.label :product_name %>
+        <%= form.text_field :product_name, autofocus: true, :placeholder =>"#{@product.product_name}" %>
     </div>
 
     <div>
-        <%= product.text_field :tax_excluded_price, autofocus: true, :placeholder =>"#{@product.tax_excluded_price}" %>
+        <%= form.label :tax_excluded_price %>
+        <%= form.text_field :tax_excluded_price, autofocus: true, :placeholder =>"#{@product.tax_excluded_price}" %>
     </div>
 
     <div>
-        <%= product.text_field :content, autofocus: true, placeholder: @product.content, class: "form-control"%>
+        <%= form.label :content %>
+        <%= form.text_field :content, autofocus: true, placeholder: @product.content, class: "form-control"%>
     </div>
     <div>
-        <%= product.select :article, Product.enum_options_for_select(:article), {prompt: @product.article}, class: "prefecture-select"%>
+        <%= form.label :article %>
+        <%= form.select :article, Product.enum_options_for_select(:article), {prompt: @product.article}, class: "prefecture-select"%>
     </div>
     <div>
-        <%= product.collection_select(:product_category_id,ProductCategory.all,:id,:category_name,class:"prefecture-select")%>
+        <%= form.label :product_category_id %>
+        <%= form.collection_select(:product_category_id,ProductCategory.all,:id,:category_name,class:"prefecture-select")%>
     </div>
     <div>
-        <%= product.select :appraisal_document, Product.enum_options_for_select(:appraisal_document), {prompt: @product.appraisal_document}, class: "prefecture-select"%>
+        <%= form.label :appraisal_document %>
+        <%= form.select :appraisal_document, Product.enum_options_for_select(:appraisal_document), {prompt: @product.appraisal_document}, class: "prefecture-select"%>
     </div>
 
     <div>
-        <%= product.select :country, Product.enum_options_for_select(:country), {prompt: @product.country}, class: "prefecture-select"%>
+        <%= form.label :country %>
+        <%= form.select :country, Product.enum_options_for_select(:country), {prompt: @product.country}, class: "prefecture-select"%>
     </div>
     <div>
-        <%= product.select :era, Product.enum_options_for_select(:era), {prompt: @product.era}, class: "prefecture-select"%>
+        <%= form.label :era %>
+        <%= form.select :era, Product.enum_options_for_select(:era), {prompt: @product.era}, class: "prefecture-select"%>
     </div>
     <div>
-        <%= product.select :era_name, Product.enum_options_for_select(:era_name), {prompt: @product.era_name}, class: "prefecture-select"%>
+        <%= form.label :era_name %>
+        <%= form.select :era_name, Product.enum_options_for_select(:era_name), {prompt: @product.era_name}, class: "prefecture-select"%>
     </div>
     <div>
-        <%= product.select :sign, Product.enum_options_for_select(:sign), {prompt: @product.sign}, class: "prefecture-select"%>
+        <%= form.label :sign %>
+        <%= form.select :sign, Product.enum_options_for_select(:sign), {prompt: @product.sign}, class: "prefecture-select"%>
     </div>
     <div>
-        <%= product.select :sales_status, Product.enum_options_for_select(:sales_status),class: "prefecture-select"%>
+        <%= form.label :sales_status %>
+        <%= form.select :sales_status, Product.enum_options_for_select(:sales_status),class: "prefecture-select"%>
     </div>
     <div>
-        <%= product.submit "更新する" %>
+        <%= form.label :images %>
+        <%= form.file_field :images, multiple: true %>
+    </div>
+
+    <% if @product.images.present? %>
+        <p>現在登録されている画像（削除するものはチェックしてください）</p>
+        <% @product.images.each do |image| %>
+            <%= form.check_box :image_ids, {multiple: true}, image.id, false %>
+            <%= image_tag image, size:"100x100" %> <br>
+        <% end %>
+  <% end %>
+
+    <div>
+        <%= form.submit "更新する" %>
     </div>
 <% end %>
