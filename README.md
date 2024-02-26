@@ -1,13 +1,15 @@
 # Ruby on ralisでECサイトの作成
-# 開発環境
+## 背景
+今まで触れたことない言語の練習のため、作成しております。
+## 開発環境
 - Ruby 3.2.2
 - Rails 7.1.2
 - MacOS sonoma 14.3
 - WindowsOS 11(22H2)
     - Ubuntu 22.04.3LTS
 
-# 導入手順
-## Mac
+## 導入手順
+### Mac
 rbenvのインストール
 ```
 $ brew install rbenv ruby-build
