@@ -42,8 +42,19 @@ class ProductsController < ApplicationController
   def update
     #更新
     product = Product.find(params[:id])
-    product.update(product_params)
-    redirect_to product_path(product.id)
+    if params[:product][:image_ids]
+      params[:product][:image_ids].each do |image_id|
+        image  = product.images.find(image_id)
+        image.purge
+      end
+    end
+
+    #rails 6.0以降画像の更新が上書きできない問題の対処  https://github.com/rails/rails/issues/35817
+    if product.update(product_params)
+      product.images.attach(params[:product][:my_images])
+      flash[:success] = "更新しました"
+      redirect_to product_path(product.id)
+    end
   end
 
   private

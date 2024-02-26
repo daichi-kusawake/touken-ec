@@ -9,6 +9,8 @@ class Product < ApplicationRecord
   belongs_to :product_category, optional: true
   has_rich_text :content
 
+  attr_accessor :my_images
+
   #enum設定 1:刀 2:刀装具 3:甲冑
   enum article: {japanese_sword: 0,tosogu: 1,kattyu: 2}
 

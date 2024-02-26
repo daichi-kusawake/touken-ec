@@ -49,9 +49,9 @@
         <%= form.label :sales_status %>
         <%= form.select :sales_status, Product.enum_options_for_select(:sales_status),class: "prefecture-select"%>
     </div>
-    <div>
-        <%= form.label :images %>
-        <%= form.file_field :images, multiple: true %>
+    <div class="field">
+        <%= form.label :my_images %>
+        <%= form.file_field :my_images, multiple: true %>
     </div>
 
     <% if @product.images.present? %>
