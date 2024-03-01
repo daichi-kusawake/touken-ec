@@ -54,13 +54,11 @@
         <%= form.file_field :my_images, multiple: true %>
     </div>
 
-    <% if @product.images.present? %>
-        <p>現在登録されている画像（削除するものはチェックしてください）</p>
-        <% @product.images.each do |image| %>
-            <%= form.check_box :image_ids, {multiple: true}, image.id, false %>
-            <%= image_tag image, size:"100x100" %> <br>
-        <% end %>
-  <% end %>
+    <p>現在登録されている画像（削除するものはチェックしてください）</p>
+    <% @product.images.each do |image| %>
+        <%= form.check_box :image_ids, {multiple: true}, image.id, false %>
+        <%= image_tag image, size:"100x100" %> <br>
+    <% end %>
 
     <div>
         <%= form.submit "更新する" %>
