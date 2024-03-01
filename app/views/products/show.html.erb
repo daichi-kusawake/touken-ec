@@ -14,10 +14,9 @@
     <p class="text-lowercase"><%= @product.human_attribute_enum(:sign)%></p>
     <p class="text-lowercase"><%= @product.human_attribute_enum(:sales_status)%></p>
 
-    <% if @product.images.present? %>
-        <% @product.images.each do |image| %>
-            <%= image_tag image, size:"100x100" %> <br>
-        <% end %>
+   
+    <% @product.images.each do |image| %>
+        <%= image_tag image, size:"100x100" %> <br>
     <% end %>
 
     <%= link_to "編集", edit_product_path(@product) %>
