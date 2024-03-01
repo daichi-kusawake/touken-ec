@@ -45,7 +45,7 @@ class ProductsController < ApplicationController
     if params[:product][:image_ids]
       params[:product][:image_ids].each do |image_id|
         image  = product.images.find(image_id)
-        image.purge
+        image.purge #TODO
       end
     end
 
@@ -53,8 +53,10 @@ class ProductsController < ApplicationController
     if product.update(product_params)
       product.images.attach(params[:product][:my_images])
       flash[:success] = "更新しました"
-      redirect_to product_path(product.id)
     end
+
+    redirect_to product_path(product.id)
+
   end
 
   private
