@@ -126,7 +126,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_07_091417) do
     t.integer "sales_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
     t.index ["product_category_id"], name: "index_products_on_product_category_id"
   end
 

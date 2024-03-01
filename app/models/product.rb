@@ -1,13 +1,12 @@
 class Product < ApplicationRecord
-
-  mount_uploader :image, ImageUploader
-
   #複数ファイルを保持するため、imagesで宣言
   has_many_attached :images
 
   #外部キーの設定[nilの許可]
   belongs_to :product_category, optional: true
   has_rich_text :content
+
+  attr_accessor :my_images
 
   #enum設定 1:刀 2:刀装具 3:甲冑
   enum article: {japanese_sword: 0,tosogu: 1,kattyu: 2}
@@ -127,5 +126,5 @@ class Product < ApplicationRecord
   validates :era_name,presence: true
   validates :sign,presence: true
   validates :sales_status,presence: true
-
+  validates :images,presence:true,blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg']}
 end
