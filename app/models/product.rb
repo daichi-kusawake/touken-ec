@@ -1,28 +1,27 @@
 class Product < ApplicationRecord
-  #複数ファイルを保持するため、imagesで宣言
+  # 複数ファイルを保持するため、imagesで宣言
   has_many_attached :images
   attr_accessor :my_images
 
-  #外部キーの設定[nilの許可]
+  # 外部キーの設定[nilの許可]
   belongs_to :product_category, optional: true
   has_many :orders
   has_rich_text :content
 
-  #enum設定 1:刀 2:刀装具 3:甲冑
-  enum article: {japanese_sword: 0,tosogu: 1,kattyu: 2}
+  # enum設定 1:刀 2:刀装具 3:甲冑
+  enum article: { japanese_sword: 0, tosogu: 1, kattyu: 2 }
 
-  #enum設定 0の場合：売り切れ,1の場合販売中
-  enum sales_status:{sold_out: 0,on_sale: 1}
+  # enum設定 0の場合：売り切れ,1の場合販売中
+  enum sales_status: { sold_out: 0, on_sale: 1 }
 
   enum appraisal_document: {
     general: 0,        # 保存刀剣
     special: 1,        # 特別保存刀剣
     important: 2,      # 重要刀剣
-    special_important: 3  # 特別重要刀剣
+    special_important: 3 # 特別重要刀剣
   }
 
-
-  enum country:{
+  enum country: {
     higo: 0,          # 肥後
     yamato: 1,        # 大和
     izumo: 2,         # 出雲
@@ -32,7 +31,7 @@ class Product < ApplicationRecord
     kaga: 6           # 加賀
   }
 
-  enum era:{
+  enum era: {
     jomon: 0,         # 縄文時代
     yayoi: 1,         # 弥生時代
     kofun: 2,         # 古墳時代
@@ -114,20 +113,19 @@ class Product < ApplicationRecord
     kanesada: 11       # 兼定
   }
 
-  #バリデーション設定
-  validates :product_name,presence: true
-  validates :tax_excluded_price,numericality: {only_integer: true}
-  validates :content,presence: true
-  validates :product_category,presence: true
-  validates :article,presence: true
-  validates :appraisal_document,presence: true
-  validates :country,presence: true
-  validates :era,presence: true
-  validates :era_name,presence: true
-  validates :sign,presence: true
-  validates :sales_status,presence: true
-  validates :images,blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg']}
+  # バリデーション設定
+  validates :product_name, presence: true
+  validates :tax_excluded_price, numericality: { only_integer: true }
+  validates :content, presence: true
+  validates :product_category, presence: true
+  validates :article, presence: true
+  validates :appraisal_document, presence: true
+  validates :country, presence: true
+  validates :era, presence: true
+  validates :era_name, presence: true
+  validates :sign, presence: true
+  validates :sales_status, presence: true
+  validates :images, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'] }
   scope :price_high_to_low, -> { order(tax_excluded_price: :desc) }
   scope :price_low_to_high, -> { order(tax_excluded_price: :asc) }
-
 end
