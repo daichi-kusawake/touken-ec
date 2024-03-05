@@ -126,5 +126,5 @@ class Product < ApplicationRecord
   validates :era_name,presence: true
   validates :sign,presence: true
   validates :sales_status,presence: true
-  validates :images,presence:true,blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg']}
+  validates :images,blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg']}
 end

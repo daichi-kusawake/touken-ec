@@ -40,30 +40,27 @@ class ProductsController < ApplicationController
   end
 
   def update
-    #更新
     product = Product.find(params[:id])
-    if params[:product][:image_ids]
-      params[:product][:image_ids].each do |image_id|
-        image  = product.images.find(image_id)
-        image.purge #TODO
-      end
+    update_params = product_params
+
+    if params[:product][:delete_images]
+      update_params[:images] -= params[:product][:delete_images]
     end
 
-    #rails 6.0以降画像の更新が上書きできない問題の対処  https://github.com/rails/rails/issues/35817
-    if product.update(product_params)
-      product.images.attach(params[:product][:my_images])
+    if product.update(update_params)
       flash[:success] = "更新しました"
+    else
+      flash[:danger] = "更新失敗"
     end
 
     redirect_to product_path(product.id)
-
   end
 
   private
   def product_params
     #ストロングパラメータ
-    params.require(:product).permit(:product_name,:tax_excluded_price,:description,
-    :product_category_id,:article,:appraisal_document, :country,:era,
-    :era_name, :sign, :sales_status, :content,images: [])
+    params.require(:product).permit( :product_name, :tax_excluded_price, :description,
+    :product_category_id, :article, :appraisal_document, :country, :era,
+    :era_name, :sign, :sales_status, :content, images: [])
   end
 end
