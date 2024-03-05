@@ -2,9 +2,6 @@ class ApplicationRecord < ActiveRecord::Base
   primary_abstract_class
 
   # 日本語適用
-  def self.enum_options_for_select(attr_name)
-    send(attr_name.to_s.pluralize).map { |k, _| [human_attribute_enum_value(attr_name, k), k] }.to_h
-  end
 
   def self.human_attribute_enum_value(attr_name, value)
     return if value.blank?
@@ -13,7 +10,7 @@ class ApplicationRecord < ActiveRecord::Base
   end
 
   def human_attribute_enum(attr_name)
-    self.class.human_attribute_enum_value(attr_name, send("#{attr_name}"))
+    self.class.human_attribute_enum_value(attr_name, send(attr_name.to_s))
   end
 
   scope :latest, -> { order(created_at: :desc) }

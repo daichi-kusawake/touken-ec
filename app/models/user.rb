@@ -5,7 +5,7 @@ class User < ApplicationRecord
   # authencicateメソッドの使用可
   has_secure_password
 
-  has_many :orders
+  has_many :orders, dependent: :restrict_with_exception
 
   validates :family_name, presence: true
   validates :last_name, presence: true

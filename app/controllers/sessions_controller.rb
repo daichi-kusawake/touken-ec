@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email_address: params[:session][:email_address].downcase)
 
-    if user && user.authenticate(params[:session][:password])
+    if user&.authenticate(params[:session][:password])
       # 認証が失敗した場合にFALSEを返す
       # ユーザー存在しない パスワード[TRUE or FALSE] == FALSE
       # 有効なユーザー パスワード[FALSE] == FALSE

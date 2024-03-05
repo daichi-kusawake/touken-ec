@@ -1,7 +1,9 @@
 <div class="container">
     <h1>注文情報入力</h1>
-    <%= image_tag @product.image.url, class: "aspect-square w-full rounded-xl object-cover" %>
-    
+    <% @product.images.each do |image| %>
+        <%= image_tag image, size:"100x100" %>
+    <% end %>
+
     <%= form_with url: confirm_orders_path do |f|  %>
         <h4>支払い方法</h4>
         <div class="col-sm-2 btn-group" data-toggle="buttons">
@@ -18,7 +20,7 @@
 
 
         <table>
-            <tr>    
+            <tr>
                 <td>郵便番号(ハイフンなし)</td>
                 <td><%= f.text_field :new_post_code %></td>
             </tr>

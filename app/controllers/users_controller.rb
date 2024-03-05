@@ -71,6 +71,7 @@ class UsersController < ApplicationController
   def user_params
     # ストロングパラメータ
     params.require(:user).permit(:family_name, :last_name, :family_name_furigana,
-                                 :last_name_furigana, :email_address, :password, :password_confirmation, :postal_code, :address, :account_status)
+                                 :last_name_furigana, :email_address, :password, :password_confirmation,
+                                 :postal_code, :address, :account_status)
   end
 end

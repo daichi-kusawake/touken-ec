@@ -8,7 +8,9 @@
         </tr>
         <tr>
             <td>
-                <%= image_tag @order.product.image.url, size: "100x80" %>
+                <% @order.product.images.each do |image| %>
+                    <%= image_tag image, size:"100x100" %>
+                <% end %>
                 <strong><%= @order.product.product_name %></strong>
             </td>
             <td><%= @order.product.tax_excluded_price * 1.1 %></td>
