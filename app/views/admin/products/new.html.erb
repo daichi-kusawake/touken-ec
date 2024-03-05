@@ -3,7 +3,7 @@
 
 <div class= "container">
     <div class="">
-        <%= form_with model: @product, url: products_path do |form| %>
+        <%= form_with model: @product, url: admin_products_path do |form| %>
             <!--エラー出力-->
             <% if form.object.errors.any? %>
                 <div id="error_explanation">
@@ -67,7 +67,7 @@
                 <%= form.label :images %>
                 <%= form.file_field :images, multiple: true, class:'form-control js-file-select-preview' %>
             </div>
-            
+
             <%= form.submit %>
         <% end %>
     </div>

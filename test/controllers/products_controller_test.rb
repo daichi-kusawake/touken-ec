@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ProductsControllerTest < ActionDispatch::IntegrationTest
+class Admin::ProductsControllerTest < ActionDispatch::IntegrationTest
   def setup
     @product = products(:one)
   end

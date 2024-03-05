@@ -1,7 +1,7 @@
 <% provide(:title,'Edit')%>
 <h1>Edit</h1>
 
-<%= form_with model: @product, url: product_path(@product) do |form| %>
+<%= form_with model: @product, url: admin_product_path(@product) do |form| %>
     <div>
         <%= form.label :product_name %>
         <%= form.text_field :product_name, autofocus: true, :placeholder =>"#{@product.product_name}" %>
@@ -50,16 +50,15 @@
         <%= form.select :sales_status, Product.enum_options_for_select(:sales_status),class: "prefecture-select"%>
     </div>
     <div class="field">
-        <%= form.label :my_images %>
-        <%= form.file_field :my_images, multiple: true %>
+        <%= form.label :images %>
+        <%= form.file_field :images, multiple: true %>
     </div>
 
-    <% if @product.images.present? %>
-        <p>現在登録されている画像（削除するものはチェックしてください）</p>
-        <% @product.images.each do |image| %>
-            <%= form.check_box :image_ids, {multiple: true}, image.id, false %>
-            <%= image_tag image, size:"100x100" %> <br>
-        <% end %>
+    <p>現在登録されている画像（削除するものはチェックしてください）</p>
+    <% @product.images.each do |image| %>
+        <%= form.hidden_field :images, multiple: true, value: image.signed_id %>
+        <%= check_box_tag "product[delete_images][]", image.signed_id %>
+        <%= image_tag image, size:"100x100" %><br>
     <% end %>
 
     <div>
