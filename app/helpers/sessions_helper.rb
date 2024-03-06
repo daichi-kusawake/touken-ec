@@ -21,9 +21,11 @@ module SessionsHelper
     !current_user.nil?
   end
 
-  # cookieの削除
+  # cokieの削除
   def log_out
     session.delete(:user_id)
+
+    # TODO: ヘルパー内でインスタンス変数の参照/代入する場合に警告が発生している
     @current_user = nil
   end
 end

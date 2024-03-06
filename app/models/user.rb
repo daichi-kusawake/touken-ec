@@ -5,6 +5,7 @@ class User < ApplicationRecord
   # authencicateメソッドの使用可
   has_secure_password
 
+  # REVIEW: 従属関係の設定を追加,例外処理が発生されれるか挙動確認をしていない
   has_many :orders, dependent: :restrict_with_exception
 
   validates :family_name, presence: true

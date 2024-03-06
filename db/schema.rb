@@ -140,6 +140,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_07_091417) do
     t.boolean "account_status", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

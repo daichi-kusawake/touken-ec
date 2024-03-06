@@ -7,22 +7,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    # 顧客詳細表示
-
-    # 送られたidを条件にしてmodelから検索する
     @user = User.find(params[:id])
     logged_in_current_user
   end
 
-  # 新規登録用：Userのインスタンスを作成
   def new
     @user = User.new
   end
 
   def edit
-    # 編集
     @user = User.find(params[:id])
-
     redirect_to login_path unless current_user?(@user)
   end
 
@@ -60,7 +54,7 @@ class UsersController < ApplicationController
 
   def withdraw
     @user = User.find(params[:id])
-    @user.update_attribute(:account_status, false)
+    @user.update_attribute!(:account_status, false)
     log_out
     flash[:info] = '退会しました'
     redirect_to root_path
