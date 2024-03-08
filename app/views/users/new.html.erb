@@ -19,25 +19,25 @@
 
       <!--入力フォーム-->
       <%= form.label :family_name %>
-      <%= form.text_field :family_name, placeholder: "姓" %>
+      <%= form.text_field :family_name, placeholder: "例）田中" %>
 
       <%= form.label :last_name %>
-      <%= form.text_field :last_name, placeholder: "名"%>
+      <%= form.text_field :last_name, placeholder: "例）太郎"%>
 
       <%= form.label :family_name_furigana %>
-      <%= form.text_field :family_name_furigana, placeholder: "姓（フリガナ）"%>
+      <%= form.text_field :family_name_furigana, placeholder: "例）タナカ"%>
 
       <%= form.label :last_name_furigana %>
-      <%= form.text_field :last_name_furigana, placeholder: "名（フリガナ）"%>
+      <%= form.text_field :last_name_furigana, placeholder: "例）タロウ"%>
 
       <%= form.label :email_address %>
-      <%= form.text_field :email_address, placeholder: "user@example.com"%>
+      <%= form.text_field :email_address, placeholder: "例）user@example.com"%>
 
       <%= form.label :password %>
-      <%= form.password_field :password, placeholder: "Please enter your password"%>
+      <%= form.password_field :password, placeholder: "半角英数字で入力してください"%>
 
       <%= form.label :password_confirmation %>
-      <%= form.password_field :password_confirmation, placeholder: "Please enter your password again"%>
+      <%= form.password_field :password_confirmation, placeholder: "再度入力してください"%>
 
       <%= form.label :postal_code %>
       <%= form.text_field :postal_code, placeholder: "000-0000"%>

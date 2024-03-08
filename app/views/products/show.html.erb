@@ -4,15 +4,21 @@
 <div class="containar">
     <p class="text-lowercase"><%= @product.product_name%></p>
     <p class="text-lowercase"><%= @product.tax_excluded_price%></p>
-    <p class="text-lowercase"><%= @product.description%></p>
+    <p class="text-lowercase"><%= @product.content%></p>
     <p class="text-lowercase"><%= ProductCategory.find(@product.product_category_id).category_name%></p>
-    <p class="text-lowercase"><%= @product.article%></p>
-    <p class="text-lowercase"><%= @product.appraisal_document%></p>
-    <p class="text-lowercase"><%= @product.country%></p>
-    <p class="text-lowercase"><%= @product.era%></p>
-    <p class="text-lowercase"><%= @product.era_name%></p>
-    <p class="text-lowercase"><%= @product.sign%></p>
-    <p class="text-lowercase"><%= @product.sales_status%></p>
+    <p class="text-lowercase"><%= @product.human_attribute_enum(:article)%></p>
+    <p class="text-lowercase"><%= @product.human_attribute_enum(:appraisal_document)%></p>
+    <p class="text-lowercase"><%= @product.human_attribute_enum(:country)%></p>
+    <p class="text-lowercase"><%= @product.human_attribute_enum(:era)%></p>
+    <p class="text-lowercase"><%= @product.human_attribute_enum(:era_name)%></p>
+    <p class="text-lowercase"><%= @product.human_attribute_enum(:sign)%></p>
+    <p class="text-lowercase"><%= @product.human_attribute_enum(:sales_status)%></p>
+
+   
+    <% @product.images.each do |image| %>
+        <%= image_tag image, size:"100x100" %> <br>
+    <% end %>
+
     <%= link_to "編集", edit_product_path(@product) %>
     <%= link_to "削除", @product, data: {turbo_confirm: '商品削除しますか？', turbo_method: :delete} %>
 </div>

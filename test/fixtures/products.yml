@@ -3,7 +3,6 @@
 one:
   product_name: MyString
   tax_excluded_price: 1
-  description: MyString
   product_category: one
   article: 1
   appraisal_document: 1
@@ -15,8 +14,7 @@ one:
 
 two:
   product_name: MyString
-  tax_excluded_price: 2
-  description: MyString
+  tax_excluded_price: 2 
   product_category: two
   article: 2
   appraisal_document: 2

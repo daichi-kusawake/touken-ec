@@ -11,3 +11,5 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 #参考：https://github.com/twbs/bootstrap-rubygem/blob/main/README.md
 pin "bootstrap", to: "bootstrap.min.js", preload: true
 pin "@popperjs/core", to: "popper.js", preload: true
+pin "trix"
+pin "@rails/actiontext", to: "actiontext.esm.js"

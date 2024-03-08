@@ -1,33 +1,35 @@
 # Ruby on ralisでECサイトの作成
+## 背景
+今まで触れたことない言語の練習のため、作成しております。
 ## 開発環境
 - Ruby 3.2.2
 - Rails 7.1.2
 - MacOS sonoma 14.3
-- WindowsOS 
+- WindowsOS 11(22H2)
+    - Ubuntu 22.04.3LTS
 
 ## 導入手順
-### windows
 ### Mac
 rbenvのインストール
-
-`brew install rbenv ruby-build`
-
+```
+$ brew install rbenv ruby-build
+```
 バージョン確認
-
-`rbenv -v`
-
+```
+$ rbenv -v
+```
 zshrcファイルでrbenvの初期化
-
-`echo 'export RBENV_ROOT="$HOME/.rbenv"' >> ~/.zshrc`
-
-`echo 'export PATH="$RBENV_ROOT/bin:$PATH"' >> ~/.zshrc`
-
-`echo 'eval "$(rbenv init -)"' >>  ~/.zshrc`
-
-`source ~/.zshrc`
+```
+$ echo 'export RBENV_ROOT="$HOME/.rbenv"' >> ~/.zshrc
+$ echo 'export PATH="$RBENV_ROOT/bin:$PATH"' >> ~/.zshrc
+$ echo 'eval "$(rbenv init -)"' >>  ~/.zshrc
+$ source ~/.zshrc
+```
 
 Railsのインストール
-`gem install rails`
+```
+$ gem install rails
+```
 Visual Studio Codeのインストール
 
 https://code.visualstudio.com/download
@@ -36,9 +38,7 @@ https://code.visualstudio.com/download
 ```mermaid
 erDiagram
 users ||--o{orders:""
-users ||--o{delivery_destinations:""
 
-delivery_destinations ||--o{orders:""
 
 products ||--o{orders:""
 products ||--||japanese_swords:""
@@ -68,19 +68,11 @@ users{
 orders{
     integer id PK
     references user_id FK
-    references delivery_destination_id FK
+    references product_id FK
     string payment_methods
     integer billing_amount
     integer shipping_fee
     enum order_status
-}
-
-delivery_destinations{
-    integer id PK
-    references user_id FK
-    string addressee
-    string delivery_postal_code
-    string delivery_address
 }
 
 products{
@@ -92,6 +84,7 @@ products{
     string description
     integer sales_status
     enum appraisal_document
+    enum country
     enum era
     enum era_name
     enum sign
@@ -135,22 +128,8 @@ kattyu{
 ```
 
 ▼draw.io
+![ec drawio](https://github.com/daichi-kusawake/touken-ec/assets/77773862/c91e6401-e82c-4d24-b99e-229250e96dfd)
 
-![ec drawio](https://github.com/daichi-kusawake/touken-ec/assets/77773862/fa1d7416-5923-4fbf-b5d1-7b0c9616c6a6)
 
-## ブランチ変更
 
-* ブランチの新規作成とそのブランチへの切り替え
-git checkout -b <ブランチ名>
 
-* ブランチの作成
-git branch <branch名>
-
-* ブランチの切り替え
-git checkout <branch名>
-
-* gitのステータス
-git status
-
-* gitのログ
-git log

@@ -1,19 +1,47 @@
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <%= link_to "TOUKEN", '#', id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "HOME",users_path %></li>
-            <li><%= link_to "Signup",new_user_path %></li>
-            <li><%= link_to "Login",login_path %></li>
-          </ul>
+         <%= link_to image_tag("edoz-logo.svg", alt: "edoz-logo", width: "150"),root_path %>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-white">
+          <!--bootstrap: navbar=ナビゲーションバーのスタイルの適用-->
+          <!--bootstrap: navbar-expand-lg=大画面でも常に表示-->
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <li>
+                <%= link_to root_path,class: 'nav-link text-dark' do %>
+                  <i class="fa-solid fa-house"></i>
+                  Home
+                <% end %>
+              </li>
+              
+              <% if logged_in? %>
+                <li>
+                  <%=  link_to user_path(current_user),class: 'nav-link text-dark' do %>
+                    <i class="fa-solid fa-user"></i>
+                    User
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to logout_path, data: {turbo_confirm: 'ログアウトします', turbo_method: :delete},class: 'nav-link text-dark' do %>
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Log out
+                  <% end %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to new_user_path,class: 'nav-link text-dark' do %>
+                    <i class="fa-solid fa-user-plus"></i>
+                    Sign up
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to login_path ,class: 'nav-link text-dark' do %>
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Log in
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </nav>
       </div>
-
-      <!--ログイン状態の判定-->
-      <% if logged_in? %>
-        <%= render 'users/logged_in' %>
-      <% else %>
-        <%= render 'users/not_logged_in' %>
-      <% end %>
     </header>

@@ -2,7 +2,7 @@
 <h1>Product registration</h1>
 
 <div class= "container">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="">
         <%= form_with model: @product, url: products_path do |form| %>
             <!--エラー出力-->
             <% if form.object.errors.any? %>
@@ -24,9 +24,9 @@
             <%= form.label :tax_excluded_price%>
             <%= form.number_field :tax_excluded_price,placeholder: "税抜き価格" %>
 
-            <%= form.label :description %>
-            <%= form.text_field :description, placeholder: "商品説明"%>
 
+            <%= form.label :content%>
+            <%= form.rich_text_area :content, placeholder: "商品説明" ,class: "form-control"%>
 
             <!--品物カテゴリ-->
             <!--大項目-->
@@ -62,7 +62,12 @@
             <%= form.label :sales_status %>
             <%= form.select :sales_status, Product.enum_options_for_select(:sales_status), {prompt: "選択してください"}, class: "prefecture-select"%>
 
-            <%= form.submit%>
+            <!--画像-->
+            <div class="form-group mb-3">
+                <%= form.label :images %>
+                <%= form.file_field :images, multiple: true, class:'form-control js-file-select-preview' %>
+            </div>
+            <%= form.submit %>
         <% end %>
     </div>
 </div>

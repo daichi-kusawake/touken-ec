@@ -4,7 +4,6 @@ class CreateProducts < ActiveRecord::Migration[7.1]
       t.references :product_category, null: false, foreign_key: true
       t.string :product_name
       t.integer :tax_excluded_price
-      t.string :description
       t.integer :article
       t.integer :appraisal_document
       t.integer :country

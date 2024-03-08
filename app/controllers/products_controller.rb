@@ -39,17 +39,28 @@ class ProductsController < ApplicationController
     end
   end
 
-    def update
-      #更新
-      product = Product.find(params[:id])
-      product.update(product_params)
-      redirect_to product_path(product.id)
+  def update
+    product = Product.find(params[:id])
+    update_params = product_params
+
+    if params[:product][:delete_images]
+      update_params[:images] -= params[:product][:delete_images]
     end
+
+    if product.update(update_params)
+      flash[:success] = "更新しました"
+    else
+      flash[:danger] = "更新失敗"
+    end
+
+    redirect_to product_path(product.id)
+  end
 
   private
   def product_params
     #ストロングパラメータ
-    params.require(:product).permit(:product_name,:tax_excluded_price,:description,
-    :product_category_id,:article,:appraisal_document, :country,:era, :era_name, :sign, :sales_status)
+    params.require(:product).permit( :product_name, :tax_excluded_price, :description,
+    :product_category_id, :article, :appraisal_document, :country, :era,
+    :era_name, :sign, :sales_status, :content, images: [])
   end
 end
