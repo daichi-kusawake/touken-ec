@@ -1,22 +1,21 @@
-require "test_helper"
+require 'test_helper'
 
-class ProductsControllerTest < ActionDispatch::IntegrationTest
+class Admin::ProductsControllerTest < ActionDispatch::IntegrationTest
   def setup
     @product = products(:one)
   end
 
-  test "should get new" do
-    get new_product_path
+  test 'should get new' do
+    get new_admin_product_path
     assert_response :success
   end
 
-  test "should get show" do
-    get product_path(@product)
-    assert_response :success
+  test 'should get show' do
+    get admin_product_path(@product)
   end
 
-  test "should get index" do
-    get products_path
+  test 'should get index' do
+    get admin_products_path
     assert_response :success
   end
 end

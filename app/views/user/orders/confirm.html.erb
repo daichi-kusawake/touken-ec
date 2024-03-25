@@ -1,0 +1,46 @@
+<div class="container p-3">
+    <h1>注文情報確認</h1>
+    <table class="table">
+        <tr>
+            <td>商品名</td>
+            <td>単価(税込)</td>
+            <td>小計</td>
+        </tr>
+        <tr>
+            <td>
+                <% @order.product.images.each do |image| %>
+                    <%= image_tag image, size:"100x100" %>
+                <% end %>
+                <strong><%= @order.product.product_name %></strong>
+            </td>
+            <td><%= @order.product.tax_excluded_price * 1.1 %></td>
+            <td><%= @order.billing_amount %></td>
+        </tr>
+    </table>
+
+    <table class="table">
+        <tr>
+            <td>送料</td>
+            <td><%= @shipping_fee %></td>
+        </tr>
+        <tr>
+            <td>請求額</td>
+            <td><%= @billing_amount %></td>
+        </tr>
+    </table>
+
+    <h4>支払い方法</h4>
+
+    <% if @selected_pay_method == "credit_card" %>
+        クレジットカード
+    <% else %>
+        銀行振込
+    <% end %>
+
+    <h4>お届け先</h4>
+    <%= @selected_address %>
+
+    <%= form_with url: orders_path, method: :post do %>
+        <%= submit_tag "注文を確定する", class: "btn btn-success" %>
+    <% end %>
+</div>

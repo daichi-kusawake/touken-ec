@@ -1,0 +1,29 @@
+<h1>Products</h1>
+<div class="">
+    <div class="rounded <%= @sort === "latest" ? "bg-gray-800 text-gray-100" : "bg-gray-100 text-gray-800" %>">
+        <%= link_to 'Latest', products_path(latest: true) %>
+    </div>
+    <div class="rounded <%= @sort === "price_high_to_low" ? "bg-gray-800 text-gray-100" : "bg-gray-100 text-gray-800" %>">
+        <%= link_to 'Price: High to Low', products_path(price_high_to_low: true) %>
+    </div>
+    <div class="rounded <%= @sort === "price_low_to_high" ? "bg-gray-800 text-gray-100" : "bg-gray-100 text-gray-800" %>">
+        <%= link_to 'Price: Low to High', products_path(price_low_to_high: true) %>
+    </div>
+</div>
+<div class='flex flex-wrap justify-center'>
+    <% @products.each do |product| %>
+        <div class="">
+            <%= link_to product_path(product) do %>
+                <% product.images.each do |image| %>
+                    <%= image_tag(image, width:100) %>
+                <% end %>
+                <div class="">
+                    <p class=""><%= product.product_name %></p>
+                    <div class="">
+                        <span class=""><%= number_to_currency(product.tax_excluded_price, unit: "¥", strip_insignificant_zeros: true) %></span>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    <% end %>
+</div>

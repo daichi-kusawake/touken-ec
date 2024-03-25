@@ -1,9 +1,7 @@
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-         <%= link_to image_tag("edoz-logo.svg", alt: "edoz-logo", width: "150"),root_path %>
+          <%= link_to image_tag("edoz-logo.svg", alt: "edoz-logo", width: "150"),root_path %>
         <nav class="navbar navbar-expand-lg navbar-dark bg-white">
-          <!--bootstrap: navbar=ナビゲーションバーのスタイルの適用-->
-          <!--bootstrap: navbar-expand-lg=大画面でも常に表示-->
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <li>
@@ -12,7 +10,7 @@
                   Home
                 <% end %>
               </li>
-              
+
               <% if logged_in? %>
                 <li>
                   <%=  link_to user_path(current_user),class: 'nav-link text-dark' do %>

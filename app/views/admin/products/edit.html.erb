@@ -1,7 +1,7 @@
 <% provide(:title,'Edit')%>
 <h1>Edit</h1>
 
-<%= form_with model: @product, url: product_path(@product) do |form| %>
+<%= form_with model: @product, url: admin_product_path(@product) do |form| %>
     <div>
         <%= form.label :product_name %>
         <%= form.text_field :product_name, autofocus: true, :placeholder =>"#{@product.product_name}" %>

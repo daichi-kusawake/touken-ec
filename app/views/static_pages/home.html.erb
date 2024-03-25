@@ -1,2 +1,68 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<br>
+<div class="top-wrapper">
+</div>
+
+<!--商品紹介-->
+<div class="product-wrapper">
+    <div class="container">
+        <div class="heading">
+            <h2>商品紹介</h2>
+        </div>
+
+    <div class="products">
+        <div class="product">
+            <div class="product-icon">
+                <%= link_to image_tag("katana-top.png", alt: "katana-top", width: "150"),products_path %>
+            </div>
+            <p class="text-contents">明治以降の日本刀から現代刀まで幅広く取り扱っています。</p>
+        </div>
+
+        <div class="product">
+          <div class="product-icon">
+            <%= link_to image_tag("tuba-top.png", alt: "tuba-top", width: "150"),products_path %>
+          </div>
+          <p class="text-contents"> 鍔は一枚の小さな丸い板に様々な物語が込められ、世界があります。その世界に魅せられ、鍔のみををコレクションされる方も多数おられます。</p>
+        </div>
+
+        <div class="product">
+          <div class="product-icon">
+            <%= link_to image_tag("yoroi-top.png", alt: "yoroi-top", width: "150"),products_path %>
+          </div>
+          <p class="text-contents">hogehogehogehogehogehogehogehoge</p>
+        </div>
+
+        <div class="product">
+          <div class="product-icon">
+            <%= link_to image_tag("menuki-top.png", alt: "menuki-top", width: "150"),products_path %>
+          </div>
+          <p class="text-contents">hogehogehogehogehogehogehogehoge</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--店舗情報-->
+  <div class="store-inform">
+
+    <div class="container">
+
+      <div class="heading">
+        <h2>店舗　情報</h2>
+      </div>
+
+      <div class="address">
+        <p>〒999-9999<br>東京都hogehogehogehoge</p>
+      </div>
+
+      <div class="tel-number">
+        <p>メール : info@hoge.com</p>
+        <p>電話 : 00-0000-0000</p>
+        <p>FAX : 00-0000-0000</p>
+        <p>携帯 : 000-0000-0000</p>
+      </div>
+
+      <div class="business-hours">
+        <p>営業日時： 午前8時～午後24時　年中無休</p>
+      </div>
+
+    </div>
+  </div>

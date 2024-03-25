@@ -1,7 +1,5 @@
 ja:
   activerecord:
-    models:
-      product:
     attributes:
       images: "商品画像"
       article:
@@ -110,6 +108,22 @@ ja:
         last_name_furigana: "名（フリガナ）"
         postal_code: "郵便番号"
         address: "住所"
+      payment_methods:
+        credit_card: "クレジット決済"
+        transfer: "銀行振込"
+      product:
+        product_name: "商品名"
+        tax_excluded_price: "税抜き価格"
+        content: "商品説明"
+        article: "種別"
+        category_name: "商品カテゴリ"
+        appraisal_document: "鑑定書"
+        country: "国"
+        era: "時代"
+        era_name: "年号"
+        sign: "銘"
+        sales_status: "販売ステータス"
+        image: "商品画像"
 
   errors:
     messages:
@@ -117,12 +131,6 @@ ja:
       invalid: "が無効です"
       confirmation: "がパスワードと一致しません"
       not_a_number: "は数値ではありません"
-      extension_whitelist_error: "%{extension}ファイルのアップロードは許可されていません。アップロードできるファイルタイプ: %{allowed_types}"
-      extension_blacklist_error: "%{extension}ファイルのアップロードは許可されていません。アップロードできないファイルタイプ: %{prohibited_types}"
-      content_type_whitelist_error: "%{content_type}ファイルのアップロードは許可されていません。アップロードできるファイルタイプ: %{allowed_types}"
-      content_type_blacklist_error: "%{content_type}ファイルのアップロードは許可されていません"
-      rmagick_processing_error: "rmagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{e}"
-      mini_magick_processing_error: "MiniMagickがファイルを処理できませんでした。画像を確認してください。エラーメッセージ: %{e}"
       min_size_error: "を%{min_size}以上のサイズにしてください"
       max_size_error: "を%{max_size}以下のサイズにしてください"
       taken: "はすでに使用されています"

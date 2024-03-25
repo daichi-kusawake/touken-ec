@@ -1,0 +1,25 @@
+<div class="relative mx-auto max-w-screen-xl p-6">
+    <div class="grid grid-cols-1 items-start gap-9 md:grid-cols-2">
+        <div>
+            <% @product.images.each do |image| %>
+                <%= image_tag(image) %>
+            <% end %>
+        </div>
+        <div class="sticky top-0">
+            <div class="flex flex-col justify-between">
+                <div class="flex justify-between mb-6">
+                    <div class="max-w-[35ch]">
+                    <h1 class="text-2xl font-bold">
+                    <%= @product.product_name %>
+                    </h1>
+                </div>
+            <p class="text-2xl font-bold"><%= number_to_currency(@product.tax_excluded_price, unit: "¥", strip_insignificant_zeros: true) %></p>
+            </div>
+            <div class="mb-3">
+            <p>
+                <%= @product.content %>
+            </p>
+            <%= link_to "購入する", new_order_path(@product.id), class: "btn btn-info" %>
+        </div>
+    </div>
+</div>

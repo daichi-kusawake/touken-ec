@@ -2,7 +2,6 @@
 
 one:
   user: one
-  delivery_destination: one
   product: one
   addressee: MyString
   delivery_postal_code: MyString
@@ -14,7 +13,6 @@ one:
 
 two:
   user: two
-  delivery_destination: two
   product: two
   addressee: MyString
   delivery_postal_code: MyString

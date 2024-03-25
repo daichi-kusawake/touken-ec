@@ -56,16 +56,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_07_091417) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "delivery_destinations", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "addressee"
-    t.string "delivery_postal_code"
-    t.string "delivery_address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_delivery_destinations_on_user_id"
-  end
-
   create_table "japanese_swords", force: :cascade do |t|
     t.float "blade_length"
     t.float "curvature"
@@ -91,7 +81,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_07_091417) do
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "delivery_destination_id", null: false
     t.integer "product_id", null: false
     t.string "addressee"
     t.string "delivery_postal_code"
@@ -99,10 +88,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_07_091417) do
     t.string "payment_methods"
     t.integer "billing_amount"
     t.integer "shipping_fee"
-    t.integer "order_status"
+    t.integer "order_status", default: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["delivery_destination_id"], name: "index_orders_on_delivery_destination_id"
     t.index ["product_id"], name: "index_orders_on_product_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
@@ -152,12 +140,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_07_091417) do
     t.boolean "account_status", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "delivery_destinations", "users"
-  add_foreign_key "orders", "delivery_destinations"
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "product_categories"

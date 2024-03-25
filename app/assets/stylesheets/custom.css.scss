@@ -49,7 +49,7 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: 1;
+    line-height: 100;
 }
 
 h1 {
@@ -153,4 +153,90 @@ input {
     .form-control {
         color: rgb(214, 122, 127);
     }
+}
+
+/* トップデザイン　*/
+.top-wrapper {
+    padding: 230px 0 300px 0;
+    background-image: url("/assets/top-wrapper.jpeg");
+    background-size: cover;
+    text-align: center;
+}
+
+.top-wrapper h1 {
+    position: absolute;
+    top: 125px;
+    left: 150px;
+    font-size: 50px;
+    letter-spacing: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    opacity: 0.9;
+}
+
+.top-wrapper p {
+    position: absolute;
+    top: 300px;
+    left: 60px;
+    font-family: cursive;
+    opacity: 0.7;
+}
+
+/*コンテンツ作成*/
+.product-wrapper {
+    height: 600px;
+    background-color: white;
+    text-align: center;
+}
+
+.heading {
+    padding-top: 80px;
+    padding-bottom: 50px;
+    color: #5f5d60;
+}
+
+.heading h2 {
+    font-weight: normal;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+.products {
+    float: left;
+}
+
+.product {
+    float: left;
+    width: 25%;
+    margin-bottom: 50px;
+}
+
+
+.product-icon {
+    position: relative;
+}
+
+.product-icon img {
+    height: 150px;
+    weight: 150px;
+}
+
+.product-icon img:hover {
+    opacity: 1;
+}
+
+.text-contents {
+    width: 80%;
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #b3aeb5;
+}
+
+/*店舗情報*/
+.store-inform {
+    height: 450px;
+}
+
+.store-inform p {
+    margin-bottom: 10px;
 }
